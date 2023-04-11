@@ -15,13 +15,18 @@ export const getAllSpotsThunk = () => async (dispatch) => {
     }
 }
 
-const initialState = {}
+const initialState = {
+
+}
 
 const spotsReducer = (state = initialState, action) => {
     let newSpotsState;
     switch(action.type) {
         case GET_ALLSPOTS:
-            newSpotsState = { ...state }
+            newSpotsState = {};
+            action.spots.Spots.forEach(spot => {
+                newSpotsState[spot.id] = spot
+            })
             return newSpotsState
         default:
             return state
