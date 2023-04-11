@@ -20,7 +20,7 @@ const sequelize = require('sequelize');
 const { Op } = require('sequelize');
 
 
-// Get all spots
+// // Get all spots
 router.get('/', validateQuery, async (req, res, next) => {
 
     let { page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice } = req.query
@@ -235,6 +235,7 @@ router.get('/current', requireAuth, async (req, res, next) => {
         Spots: ownedSpots
     })
 })
+
 
 
 // Get spot by spotId
