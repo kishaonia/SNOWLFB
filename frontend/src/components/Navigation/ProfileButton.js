@@ -21,7 +21,6 @@ function ProfileButton({ user }) {
 
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = (e) => {
       if (!ulRef.current.contains(e.target)) {
         setShowMenu(false);
@@ -45,19 +44,26 @@ function ProfileButton({ user }) {
   const ulClassName = "profile-dropdown" + (showMenu ? " show" : "");
 
   return (
-    <button className="profile-menu">
-      <div onClick={openMenu} className="drop-down-menu">
+    <>
+ <button onClick={openMenu} className="drop-down-menu">
         <i className="fa fa-bars" aria-hidden="true"></i>
         <i className="fa fa-user-circle-o"></i>
-      </div>
+      </button>
+    <div className="profile-menu">
+    
+      {/* <div onClick={openMenu} className="drop-down-menu">
+        <i className="fa fa-bars" aria-hidden="true"></i>
+        <i className="fa fa-user-circle-o"></i>
+      </div> */}
 
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
             <li>
-              {user.firstName} {user.lastName}
+              Hello, {user.firstName} {user.lastName}!
             </li>
+
+            <li>{user.username}</li>
             <li>
               <NavLink exact to="/spots/current">
                 Manage Your Spots
@@ -65,12 +71,13 @@ function ProfileButton({ user }) {
             </li>
             <li>{user.email}</li>
             <li>
-              <button onClick={logout}>Log Out</button>
+              <button className="button-logout" onClick={logout}>Log Out</button>
             </li>
           </>
         ) : (
           <>
-            <div className="profile-drop-down">
+            
+              
               <OpenModalMenuItem
                 itemText="Log In"
                 onItemClick={closeMenu}
@@ -81,11 +88,12 @@ function ProfileButton({ user }) {
                 onItemClick={closeMenu}
                 modalComponent={<SignupFormModal />}
               />
-            </div>
+            
           </>
         )}
       </ul>
-    </button>
+    </div>
+    </>
   );
 }
 

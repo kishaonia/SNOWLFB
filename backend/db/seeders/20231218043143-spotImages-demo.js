@@ -26,17 +26,17 @@ module.exports = {
   },
   {
     spotId:2,
-    url:'https://upload.wikimedia.org/wikipedia/commons/e/e6/Pixarpiersunset2019_%28cropped%29.jpeg',
+    url:'https://upload.wikimedia.org/wikipedia/commons/e/e6/Pixarpiersunset2019_%28cropped%29.jpg',
     preview:false
   },
   {
     spotId:3,
-    url:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/92/e4/97/disneyland-paris.jpg?w=1200&h=1200&s=1.jpeg',
+    url:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/92/e4/97/disneyland-paris.jpg?w=1200&h=1200&s=1',
     preview:false
   },
   {
     spotId:4,
-    url:'https://secure.cdn1.wdpromedia.cn/resize/mwImage/1/720/288/75/wdpromedia.disney.go.com/media/wdpro-shdr-assets/prod/en-cn/system/images/shdr-theme-park-shanghai-disneyland-park-hero-full-new.jpeg',
+    url:'https://secure.cdn1.wdpromedia.cn/resize/mwImage/1/720/288/75/wdpromedia.disney.go.com/media/wdpro-shdr-assets/prod/en-cn/system/images/shdr-theme-park-shanghai-disneyland-park-hero-full-new.jpg',
     preview:true
       }
     ], {})

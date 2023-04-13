@@ -1,0 +1,92 @@
+.edit-all-spots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 100px;
+  }
+  
+  .current-Spots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 3rem;
+    border: 1px solid #dddddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease-in-out;
+    width: 300px;
+  }
+  
+  .current-Spots:hover {
+    transform: translateY(-5px);
+  }
+  
+  .edit-navContainer {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  .edit-navImage {
+    width: 120px;
+    height: 80px;
+    margin-right: 1rem;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .edit-navImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .edit-navSpotDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+  
+  .edit-navSpotDetails div:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  
+  .avgRating {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .avgRating::before {
+    content: "Rating: ";
+    margin-right: 0.5rem;
+  }
+  
+  .update-delete-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .update-delete-button button {
+    background-color: #bda0df;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+  }
+  
+  .update-delete-button button:hover {
+    background-color: #e382c6df;
+  }
+  

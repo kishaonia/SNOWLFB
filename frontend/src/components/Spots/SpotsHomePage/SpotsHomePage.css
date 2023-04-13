@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 40px;
+  margin-top: 100px;
+  
 }
 
 .navContainer {
@@ -13,8 +15,12 @@
   border: 1px solid #ebebeb;
   border-radius: 16px;
   overflow: hidden;
+  transition: transform 0.2s ease-in-out;
 }
 
+.navContainer:hover {
+  transform: translateY(-5px);
+}
 .navImage {
   height: 0;
   padding-bottom: 66.666%;

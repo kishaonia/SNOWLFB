@@ -36,27 +36,28 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <div className="full-nav">
-        <div className="left-nav-bar">
-          <a href="/">
-            <img src={logoproj} height="100px" width="300px" alt="Logo" />
-          </a>
-        </div>
-        <div className="right-nav-bar">
-          <NavLink exact to="/">
-            Home
+  <ul>
+    <div className="full-nav">
+      <div className="left-nav-bar">
+        <a href="/">
+          <img src={logoproj} height="100px" width="300px" alt="Logo" />
+        </a>
+      </div>
+      <div className="right-nav-bar">
+        {sessionUser && (
+          <NavLink className="create-spot-link" exact to="/spots/new">
+            Create a Spot
           </NavLink>
-          {sessionUser ? (
-            <NavLink className="create-spot-link" exact to="/spots/new">
-              Create a Spot
-            </NavLink>
-          ) : null}
-          {isLoaded && sessionLinks}
+        )}
+      
+        <div className='profile-button'>
+           <ProfileButton user={sessionUser} />
         </div>
       </div>
-    </ul>
-  );
+    </div>
+  </ul>
+);
+
 }
 
 export default Navigation;

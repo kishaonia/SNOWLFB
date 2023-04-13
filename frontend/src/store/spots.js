@@ -4,6 +4,7 @@ const GET_ALLSPOTS = "spots/GET_AllSPOTS"
 const GET_ONESPOT = "spots/GET_ONESPOT"
 const GET_CURRENTUSERSPOTS = "spots/GET_CURRENTUSERSPOTS"
 const POST_ONESPOT = "spots/POST_ONESPOT"
+const PUT_ONESPOT = "spots/PUT_ONESPOT"
 
 export const getAllSpotsAction = (spots) => ({
     type: GET_ALLSPOTS,
@@ -23,6 +24,11 @@ export const getOneSpot = (spot) => ({
 
 export const createSpotAction = (spot) => ({
     type: POST_ONESPOT,
+    spot
+})
+
+export const editSpotAction = (spot) => ({
+    type: PUT_ONESPOT,
     spot
 })
 
@@ -51,6 +57,20 @@ export const getOneSpotThunk = (spotId) => async dispatch => {
         const details = await res.json();
         dispatch(getOneSpot(details))
     }
+}
+
+export const editSpotThunk = (spot, spotId) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${spotId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(spot)
+    })
+    if (response.ok) {
+       const editSpotThunk = await response.json()
+        await dispatch(editSpotAction(editSpotThunk))
+    }   
+    return editSpotThunk
+
 }
 // export const createOneSpotThunk = (spot, images) => async dispatch => {
 // const res = await csrfFetch('/api/spots', {
@@ -149,6 +169,10 @@ const spotsReducer = (state = initialState, action) => {
         case POST_ONESPOT:
             newSpotsState = { ...state };
             newSpotsState[action.spot.id] = action.spot;
+            return newSpotsState;
+        case PUT_ONESPOT:
+            newSpotsState = {...state};
+            newSpotsState[action.spot.id] = action.spot
             return newSpotsState
         default:
             return state

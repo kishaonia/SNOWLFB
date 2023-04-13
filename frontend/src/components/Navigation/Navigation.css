@@ -1,26 +1,42 @@
-div.full-nav {
+.full-nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-  
+    align-items: center;
+    position: sticky;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-.hidden {
-    display: none
-}
- 
-  button {
-    width: 50px;
-    height: 25px;
+  .left-nav-bar img {
+    display: block;
   }
   
-  form {
-    height: 300px;
-    border-radius: 10px;
+  .right-nav-bar {
+    display: flex;
+    align-items: center;
   }
-div.right-nav-bar> {
-   text-align: right;
-   display: flex;
-   width: 300px;
-}
-
+  
+  .right-nav-bar > * {
+    margin-right: 1rem;
+  }
+  
+  
+  .create-spot-link {
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+  }
+  
+  .create-spot-link:hover {
+    text-decoration:dotted;
+    color: rgb(90, 126, 126);
+  }
+  
+  .profile-button {
+    margin-right: 1rem;
+    position: sticky;
+    
+  }
+  
