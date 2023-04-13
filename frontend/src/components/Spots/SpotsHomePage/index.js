@@ -23,15 +23,17 @@ const SpotsHomePage = () => {
         <div className='all-spots'>
         {allSpotsValues?.map(spotValues => {
             return (
-                <NavLink className="navContainer" to={`/spots/${spotValues?.id}`}>
-                    <div className='navImage'>
-                        <img src={spotValues?.previewImage}/>
-                    </div>
-                    <div className='navSpotDetails'>
-                        <div> {spotValues?.city}, {spotValues?.state} {spotValues?.avgRating}</div>
-                        <div>$ {spotValues?.price?.toFixed(2)} per night</div>
-                    </div>
-                </NavLink>
+                <NavLink key={spotValues?.id} className="navContainer" to={`/spots/${spotValues?.id}`}>
+            <div className='navImage'>
+            <img src={spotValues?.previewImage}/>
+             </div>
+             <div className='navSpotDetails'>
+            <div>{spotValues?.city}, {spotValues?.state}</div>
+            <div>$ {spotValues?.price?.toFixed(2)} per night</div>
+            <div className="avgRating">{spotValues?.avgRating}</div>
+             </div>
+</NavLink>
+
             )
         })}
 

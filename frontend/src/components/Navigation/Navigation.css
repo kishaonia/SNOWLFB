@@ -1,0 +1,18 @@
+div.full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  button {
+    width: 50px;
+    height: 25px;
+  }
+  
+  form {
+    height: 300px;
+    border-radius: 10px;
+  }
+div.right-nav-bar> {
+   text-align: right;
+}

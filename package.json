@@ -12,6 +12,7 @@
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend",
     "build": "npm run build --prefix backend"
+   
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,7 @@
   "homepage": "https://github.com/kishaonia/pleaseplease.git",
   "dependencies": {
     "js-cookie": "^3.0.1"
+    
+
   }
 }

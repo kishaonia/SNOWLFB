@@ -1,4 +1,29 @@
-.spot-detail-image {
-    height: 400px;
-    width: 400px;
-}
+.spot-details-address {
+    font-size: 15px;
+    color: #222;
+  }
+  
+  .spot-detail-image {
+    display: flex;
+    margin: 1rem 0;
+    border-radius: 10px;
+    height: 300px;
+    width: 500px;
+  }
+  
+  h1.spots-h1 {
+    font-size: 30px;
+    color: #222;
+
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  
+    color: #222;
+  }
+  
+  .page-wrapper-one-spot{
+    padding-left: 50px;
+  }
