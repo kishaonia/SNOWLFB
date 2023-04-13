@@ -7,8 +7,9 @@
     display: flex;
     margin: 1rem 0;
     border-radius: 10px;
-    height: 300px;
-    width: 500px;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
   }
   
   h1.spots-h1 {
@@ -26,4 +27,16 @@
   
   .page-wrapper-one-spot{
     padding-left: 50px;
+  }
+
+  .spot-detail-image + img {
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+  }
+  .spot-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
