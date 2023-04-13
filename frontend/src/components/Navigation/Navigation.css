@@ -2,8 +2,13 @@ div.full-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  
   }
   
+.hidden {
+    display: none
+}
+ 
   button {
     width: 50px;
     height: 25px;
@@ -15,4 +20,7 @@ div.full-nav {
   }
 div.right-nav-bar> {
    text-align: right;
+   display: flex;
+   width: 300px;
 }
+

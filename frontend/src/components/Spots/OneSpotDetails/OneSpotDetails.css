@@ -1,42 +1,79 @@
-.spot-details-address {
-    font-size: 15px;
-    color: #222;
+.page-wrapper-one-spot {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px;
   }
   
-  .spot-detail-image {
-    display: flex;
-    margin: 1rem 0;
-    border-radius: 10px;
-    width: 50%;
-    height: auto;
-    object-fit: cover;
+  .spots-h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
   }
   
-  h1.spots-h1 {
-    font-size: 30px;
-    color: #222;
+  .spot-details-address {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /*.spot-detail-image + img  {
+    max-width: 20%;
+    max-height: 50%;
+    margin-bottom: 10px;
+  }
+  .spot-detail-image + img + img + img + img {
+    max-width: 10%;
+    max-height: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .spot-detail-image{
+   max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 10px;
+  } */
+.spot-detail-pics {
+  display:grid;
+  justify-content: center;
+  grid-template-rows: 200px 200px ;
+  grid-template-columns: 200px 200px 200px;
 
+}
+  .spot-detail-image{
+    height: 200px;
+    width: 200px;
+    padding-left: 10px;
+    border-radius: 20px;
+    border-left: 10px;
+  }
+
+  .spot-detail-image:first-child{
+    height: 400px;
+    width: 400px;
+    grid-row: 1/3;
+    grid-column: 1/3;
+    border-radius: 20px;
+    
+  }
+  .spot-detail-image:nth-child(2) {
+    grid-row: 2/3;
+    grid-column: 3/4
+    
+  }
+  .spot-detail-image:nth-child(3) {
+    grid-column: 3/4
+  }
+  .spot-detail-image:nth-child(4) {
+    grid-row:2/3;
+    
+  }
+  .spot-detail-image:hover {
+    cursor: pointer;
   }
   
   h3 {
-    font-size: 1.6rem;
-    font-weight: 600;
-  
-    color: #222;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #484848;
   }
   
-  .page-wrapper-one-spot{
-    padding-left: 50px;
-  }
-
-  .spot-detail-image + img {
-    width: 25%;
-    height: auto;
-    object-fit: cover;
-  }
-  .spot-detail-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }

@@ -21,14 +21,16 @@ if (!spotDetailsValues) {
 }
 return (
 <> 
-<div className='page-wrapper-one-spot'>
-    <h1 className='spots-h1'>{spotDetailsValues?.name}</h1>
-    <div className="spot-details-address">{spotDetailsValues?.city},{spotDetailsValues?.state},{spotDetailsValues.country}</div>
-    {spotDetailsValues?.SpotImages?.map(spotImage => {
-        return (
-            spotImage && <img className="spot-detail-image" src={spotImage?.url} alt="spot-pic"/>
-        )
-    })}
+    <div className='page-wrapper-one-spot'>
+        <h1 className='spots-h1'>{spotDetailsValues?.name}</h1>
+        <div className="spot-details-address">{spotDetailsValues?.city},{spotDetailsValues?.state},{spotDetailsValues.country}</div>
+        <div className="spot-detail-pics">
+        {spotDetailsValues?.SpotImages?.map(spotImage => {
+            return (
+                spotImage && <img className="spot-detail-image" src={spotImage?.url} alt="spot-pic"/>
+            )
+     })}
+                </div>
     <h3>Hosted by {spotDetailsValues?.Owner?.firstName} {spotDetailsValues?.Owner?.lastName}</h3>
     </div>
 </>

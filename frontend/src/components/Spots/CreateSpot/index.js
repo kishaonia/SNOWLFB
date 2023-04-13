@@ -159,16 +159,16 @@ if (spotCreated && spotCreated.id) {
 return (
     <div className="page-wrapper-create-spot">
     <form className="create-spot-form" onSubmit = {onSubmit}>
-    <h2>Create a new Spot</h2>
+    <div className="createanewspot"> Create a new Spot</div>
     {/* <br></br> */}
-    <h3 className="whereisyourplacelocated">Where's your place located?</h3>
+    <div className="whereisyourplacelocated">Where's your place located?</div>
     <h4>Guests will only get your exact address once they booked a reservation</h4>
     <label className="create-spot-label">Country</label>
     {Object?.keys(error).length ? <h5>{error?.country && <span className="error">{error?.country}</span>}</h5> : <h7></h7>}
     <input
     type="text"
     value={country}
-    placeholder="Country"
+    
     onChange={e => setCountry(e.target.value)}
     />     
         <label className="create-spot-label">Street Address</label>
@@ -176,7 +176,7 @@ return (
         <input
             type="text"
             value= {address}
-            placeholder= "Address"
+           
             onChange={e => setAddress(e.target.value)}
         />
         <label className="create-spot-label">City</label>
@@ -185,68 +185,75 @@ return (
         <input
         type="text"
         value={city}
-        placeholder= "City"
+      
         onChange={e => setCity(e.target.value)}
         />
         <label className="create-spot-label">State</label>
-        <h5>{error?.state && <span className="error">{error?.state}</span>}</h5>
-        <h4></h4>
+        {error?.state && <span className="error">{error?.state}</span>}
         <input
         type="text"
         value= {state}
-        placeholder= "State"
+    
         onChange={e => setState(e.target.value)}
         />
-        <h5>{error?.description && <span className="error">{error?.description}</span>}</h5> 
+         <label className="create-spot-label">Description</label>
+        {error?.description && <span className="error">{error?.description}</span>}
         <input
             type="text"
             value= {description}
-        placeholder="Description"
+        placeholder="Mention the best features of your space, any special amentities like
+        fast wif or parking, and what you love about the neighborhood."
         onChange={e => setDescription(e.target.value)}
         />
-       <h5>{error?.name && <span className="error">{error?.name}</span>}</h5> 
+         <label className="create-spot-label">Name of your spot</label>
+       {error?.name && <span className="error">{error?.name}</span>}
         <input
             type="text"
             value= {name}
-        placeholder= "Name of your spot"
+        placeholder= "Catch guests attention with a spot title that highlights what makes your place special."
         onChange={e => setName(e.target.value)}
         />
-    <h5>{error?.price && <span className="error">{error?.price}</span>}</h5>
+         <label className="create-spot-label">Price</label>
+    {error?.price && <span className="error">{error?.price}</span>}
         <input
             type="text"
             value= {price}
-        placeholder= "Price"
+        placeholder= "Competitive pricing can help your listing stand out and rank higher in search results"
         onChange={e => setPrice(e.target.value)}
         />
-     <h5>{error?.previewImage && <span className="error">{error?.previewImage}</span>}</h5>
+         <label className="create-spot-label">Preview Image URL</label>
+     {error?.previewImage && <span className="error">{error?.previewImage}</span>}
         <input
             type="text"
             value={previewImage}
         placeholder="Preview Image URL"
         onChange={e => setPreviewImage(e.target.value)}
         />
-       <h5>{error?.image2 && <span className="error">{error?.image2}</span>}</h5>
+         <label className="create-spot-label">Image URL 
+         (Upload in jpeg format only.)</label>
+       {error?.image2 && <span className="error">{error?.image2}</span>}
         <input
             type="text"
             value={image2}
         placeholder= "Image URL"
         onChange={e => setImage2(e.target.value)}
         />
-       <h5>{error?.image3 && <span className="error">{error?.image3}</span>}</h5>
+        
+       {error?.image3 && <span className="error">{error?.image3}</span>}
         <input
             type="text"
             value= {image3}
         placeholder="Image URL"
         onChange={e => setImage3(e.target.value)}
         />
-     <h5>{error?.image4 && <span className="error">{error?.image4}</span>}</h5>
+     {error?.image4 && <span className="error">{error?.image4}</span>}
         <input
             type="text"
             value= {image4}
         placeholder="Image URL"
         onChange={e => setImage4(e.target.value)}
         />
-       <h5>{error?.image5 && <span className="error">{error?.image5}</span>}</h5>
+       {error?.image5 && <span className="error">{error?.image5}</span>}
         <input
             type="text"
             value= {image5}

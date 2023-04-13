@@ -25,7 +25,7 @@ const SpotsHomePage = () => {
             return (
                 <NavLink key={spotValues?.id} className="navContainer" to={`/spots/${spotValues?.id}`}>
             <div className='navImage'>
-            <img src={spotValues?.previewImage}/>
+            <img src={spotValues?.previewImage} alt="Preview-Image"/>
              </div>
              <div className='navSpotDetails'>
             <div>{spotValues?.city}, {spotValues?.state}</div>

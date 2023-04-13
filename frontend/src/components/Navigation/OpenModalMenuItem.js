@@ -2,7 +2,7 @@
 import React from 'react';
 import { useModal } from '../../context/Modal';
 
-function OpenModalButton({
+function OpenModalMenuItem({
     modalComponent, // component to render inside the modal
     itemText, // text of the menu item that opens the modal
     onItemClick, // optional: callback function that will be called once the menu item that opens the modal is clicked
@@ -21,4 +21,4 @@ function OpenModalButton({
     );
 }
 
-export default OpenModalButton;
+export default OpenModalMenuItem
