@@ -13,6 +13,7 @@
     margin: 1rem;
     padding: 3rem;
     border: 1px solid #dddddd;
+    border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.16);
     transition: transform 0.2s ease-in-out;
     width: 300px;
@@ -71,7 +72,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    width: 100%;
+    width: 1000px
   }
   
   .update-delete-button button {
@@ -84,9 +85,57 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     width: 100%;
+    margin: 3px;
   }
   
   .update-delete-button button:hover {
     background-color: #e382c6df;
   }
   
+  div.createanewspot {
+    font-size: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+    padding-bottom: 5px;
+  }
+  
+  div.whereisyourplacelocated {
+    font-size: 25px;
+    font-style: normal;
+    text-align: center;
+  }
+  
+  input[type="text"],
+  select {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    padding: 12px 20px;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .page-wrapper-create-spot {
+    padding: 40px;
+  }
+  
+  .create-spot-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-create-spot {
+    width: 150px;
+    align-self: center;
+  }
+  
+
+  .edit-spot-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

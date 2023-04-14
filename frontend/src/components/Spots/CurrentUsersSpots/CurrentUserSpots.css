@@ -47,7 +47,70 @@
 .navSpotDetails div:last-child {
     font-weight: lighter;
 }
-
+.delete-form {
+    list-style: none;
+}
+.manage-your-spots-div{
+    display: flex;
+}
+.delete-spot-button {
+    list-style: none;
+  }
+  
+  .delete-form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    padding-top: 30px;
+    width: 450px;
+    padding-bottom: 30px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .errors {
+    color: red;
+    margin-bottom: 1rem;
+  }
+  
+  .delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    
+  }
+  
+  .submit-button-delete {
+    background-color: rgb(164, 113, 230);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .submit-button-delete:hover {
+    background-color: rgb(199, 9, 145);
+   
+  }
+  
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    text-decoration: underline;
+  }
+  
 @media only screen and (max-width: 900px) {
     .navContainer {
         width: calc(50% - 10px);

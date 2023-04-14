@@ -5,6 +5,7 @@ const GET_ONESPOT = "spots/GET_ONESPOT"
 const GET_CURRENTUSERSPOTS = "spots/GET_CURRENTUSERSPOTS"
 const POST_ONESPOT = "spots/POST_ONESPOT"
 const PUT_ONESPOT = "spots/PUT_ONESPOT"
+const DELETE_ONESPOT = "spots/DELETE_ONESPOT"
 
 export const getAllSpotsAction = (spots) => ({
     type: GET_ALLSPOTS,
@@ -21,6 +22,11 @@ export const getOneSpot = (spot) => ({
     spot
     
 });
+
+export const deleteSpotAction = (spotId) => ({
+    type:DELETE_ONESPOT,
+    spotId
+})
 
 export const createSpotAction = (spot) => ({
     type: POST_ONESPOT,
@@ -57,6 +63,16 @@ export const getOneSpotThunk = (spotId) => async dispatch => {
         const details = await res.json();
         dispatch(getOneSpot(details))
     }
+}
+
+export const deleteOneSpotThunk = (spotId) => async dispatch => {
+const response = await csrfFetch(`/api/spots/${spotId}`, {
+    method: "DELETE"
+})
+if (response.ok) {
+    // const deleteSpot = await response.json()
+    dispatch(deleteSpotAction(spotId))
+}
 }
 
 export const editSpotThunk = (spot, spotId) => async dispatch => {
@@ -152,7 +168,7 @@ const spotsReducer = (state = initialState, action) => {
             return newSpotsState;
         case GET_CURRENTUSERSPOTS:
             newSpotsState = {};
-            action.spots.Spots.forEach(spot => {
+            action?.spots?.Spots?.forEach(spot => {
              newSpotsState[spot.id] = spot  
             })
             //console.log('new state 3', newSpotsState)
@@ -174,6 +190,10 @@ const spotsReducer = (state = initialState, action) => {
             newSpotsState = {...state};
             newSpotsState[action.spot.id] = action.spot
             return newSpotsState
+        case DELETE_ONESPOT:
+            newSpotsState = {...state};
+          delete  newSpotsState[action.spotId]
+          return newSpotsState
         default:
             return state
     }

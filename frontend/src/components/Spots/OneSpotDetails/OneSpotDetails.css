@@ -34,21 +34,21 @@
 .spot-detail-pics {
   display:grid;
   justify-content: center;
-  grid-template-rows: 200px 200px ;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 208px 221px;
+  grid-template-columns: 400px 170px 270px;
 
 }
   .spot-detail-image{
     height: 200px;
-    width: 200px;
+    width: 250px;
     padding-left: 10px;
-    border-radius: 20px;
+    border-radius: 25px;
     border-left: 10px;
   }
 
   .spot-detail-image:first-child{
     height: 400px;
-    width: 400px;
+    width: 550px;
     grid-row: 1/3;
     grid-column: 1/3;
     border-radius: 20px;

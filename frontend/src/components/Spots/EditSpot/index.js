@@ -11,10 +11,10 @@ import { useState, useEffect } from 'react';
 export default function EditSpot() {
     const { spotId } = useParams()
     const dispatch = useDispatch();
-    const spot = useSelector(state => state.spots)
+    const spot = useSelector(state => state?.spots)
     const spotDetails = spot[spotId]
     const history = useHistory();
-    const [address, setAddress] = useState(spotDetails?.address);
+    const [address, setAddress] = useState("");
     const [country, setCountry] = useState("");
     const [error, setError] = useState({});
     const [city, setCity] = useState("");
@@ -22,21 +22,30 @@ export default function EditSpot() {
     const [description, setDescription] = useState("");
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [previewImage, setPreviewImage] = useState("");
-    const [image2, setImage2] = useState("");
-    const [image3, setImage3] = useState("");
+    // const [previewImage, setPreviewImage] = useState("");
+    // const [image2, setImage2] = useState("");
+    // const [image3, setImage3] = useState("");
     const [state, setState] = useState("")
-    const [image4, setImage4] = useState("");
-    const [image5, setImage5] = useState("");
+    // const [image4, setImage4] = useState("");
+    // const [image5, setImage5] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
-    // const spot = useSelector(state => state.spots)
+    // // const spot = useSelector(state => state.spots)
     // const spotDetails = spot[spotId]
     console.log('Spot Details', spotDetails)
 
 useEffect(() => {
     dispatch(getOneSpotThunk(spotId))
-}, [dispatch, spotId])
+    setAddress(spotDetails?.address);
+    setCountry(spotDetails?.country);
+    setCity(spotDetails?.city);
+    setName(spotDetails?.name);
+    setDescription(spotDetails?.description);
+    setPrice(spotDetails?.price);
+    setState(spotDetails?.state)
+
+
+}, [dispatch, JSON?.stringify(spotId), JSON?.stringify(spotDetails?.address), JSON?.stringify(spotDetails?.country), JSON?.stringify(spotDetails?.city), JSON?.stringify(spotDetails?.name), JSON?.stringify(spotDetails?.description), JSON?.stringify(spotDetails?.name), JSON?.stringify(spotDetails?.state)])
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -66,48 +75,48 @@ useEffect(() => {
         if (!country) {
             error.country = "Country is required."
         }
-        if (!previewImage) {
-            error.previewImage = "Preview image is required."
-        }
-        if (previewImage) {
-            if (
-                !(previewImage.endsWith(".jpeg") || previewImage.endsWith(".png") || previewImage.endsWith(".jpeg"))
-            )
-                error.previewImage = "The image url needs to end in .jpeg, .png, or jpeg"
-        }
-
-        if (image2) {
-            if (
-                !(image2.endsWith(".jpeg") || image2.endsWith(".png") || image2.endsWith(".jpeg"))
-            )
-                error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
-        }
-        if (image3) {
-            if (
-                !(image3.endsWith(".jpeg") || image3.endsWith(".png") || image3.endsWith(".jpeg"))
-            )
-                error.image3 = "The image url needs to end in .jpeg, .png, or jpeg"
-        }
-        if (image4) {
-            if (
-                !(image4.endsWith(".jpeg") || image4.endsWith(".png") || image4.endsWith(".jpeg"))
-            )
-                error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
-        }
-        if (image5) {
-            if (
-                !(image5.endsWith(".jpeg") || image5.endsWith(".png") || image5.endsWith(".jpeg"))
-            )
-                error.image5 = "The image url needs to end in .jpeg, .png, or jpeg"
-        }
-        setError(error);
-        // if (Object.keys(error).length > 0) {
-        //     console.log(error)
+        // if (!previewImage) {
+        //     error.previewImage = "Preview image is required."
         // }
-        if (error.length > 0) {
-            return setError({})
+        // if (previewImage) {
+        //     if (
+        //         !(previewImage.endsWith(".jpeg") || previewImage.endsWith(".png") || previewImage.endsWith(".jpeg"))
+        //     )
+        //         error.previewImage = "The image url needs to end in .jpeg, .png, or jpeg"
+        // }
 
+        // if (image2) {
+        //     if (
+        //         !(image2.endsWith(".jpeg") || image2.endsWith(".png") || image2.endsWith(".jpeg"))
+        //     )
+        //         error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
+        // }
+        // if (image3) {
+        //     if (
+        //         !(image3.endsWith(".jpeg") || image3.endsWith(".png") || image3.endsWith(".jpeg"))
+        //     )
+        //         error.image3 = "The image url needs to end in .jpeg, .png, or jpeg"
+        // }
+        // if (image4) {
+        //     if (
+        //         !(image4.endsWith(".jpeg") || image4.endsWith(".png") || image4.endsWith(".jpeg"))
+        //     )
+        //         error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
+        // }
+        // if (image5) {
+        //     if (
+        //         !(image5.endsWith(".jpeg") || image5.endsWith(".png") || image5.endsWith(".jpeg"))
+        //     )
+        //         error.image5 = "The image url needs to end in .jpeg, .png, or jpeg"
+        // }
+        setError(error);
+        if (Object?.keys(error).length > 0) {
+            console.log(error)
         }
+        // if (error.length > 0) {
+        //     return setError({})
+
+        // }
         const spot = {
             country: country,
             address: address,
@@ -173,8 +182,9 @@ useEffect(() => {
     }
     return (
         <div className="page-edit-spot">
+            
             <form className="edit-spot-form" onSubmit={onSubmit}>
-                <div className="createanewspot"> Create a new Spot</div>
+                <div className="createanewspot"> Edit Spot</div>
                 {/* <br></br> */}
                 <div className="whereisyourplacelocated">Where's your place located?</div>
                 <h4>Guests will only get your exact address once they booked a reservation</h4>
@@ -182,6 +192,7 @@ useEffect(() => {
                 {Object?.keys(error).length ? <h5>{error?.country && <span className="error">{error?.country}</span>}</h5> : <h7></h7>}
                 <input
                     type="text"
+                    placeholder={spotDetails?.country}
                     value={country}
 
                     onChange={e => setCountry(e.target.value)}
@@ -200,13 +211,14 @@ useEffect(() => {
                 <input
                     type="text"
                     value={city}
-
+                    placeHolder={spotDetails?.city}
                     onChange={e => setCity(e.target.value)}
                 />
                 <label className="create-spot-label">State</label>
                 {error?.state && <span className="error">{error?.state}</span>}
                 <input
                     type="text"
+                    placeHolder={spotDetails?.state}
                     value={state}
 
                     onChange={e => setState(e.target.value)}
@@ -216,8 +228,7 @@ useEffect(() => {
                 <input
                     type="text"
                     value={description}
-                    placeholder="Mention the best features of your space, any special amentities like
-        fast wif or parking, and what you love about the neighborhood."
+                    placeholder={spotDetails?.description}
                     onChange={e => setDescription(e.target.value)}
                 />
                 <label className="create-spot-label">Name of your spot</label>
@@ -225,7 +236,7 @@ useEffect(() => {
                 <input
                     type="text"
                     value={name}
-                    placeholder="Catch guests attention with a spot title that highlights what makes your place special."
+                    placeholder={spotDetails?.name}
                     onChange={e => setName(e.target.value)}
                 />
                 <label className="create-spot-label">Price</label>
@@ -233,11 +244,11 @@ useEffect(() => {
                 <input
                     type="text"
                     value={price}
-                    placeholder="Competitive pricing can help your listing stand out and rank higher in search results"
+                    placeholder={spotDetails?.price}
                     onChange={e => setPrice(e.target.value)}
                 />
-                <label className="create-spot-label">Preview Image URL</label>
-                {error?.previewImage && <span className="error">{error?.previewImage}</span>}
+                {/* <label className="create-spot-label">Preview Image URL</label> */}
+                {/* {error?.previewImage && <span className="error">{error?.previewImage}</span>}
                 <input
                     type="text"
                     value={previewImage}
@@ -274,8 +285,8 @@ useEffect(() => {
                     value={image5}
                     placeholder="Image URL"
                     onChange={e => setImage5(e.target.value)}
-                />
-                <button className="button-create-spot" type="submit">Create Spot</button>
+                /> */}
+                <button className="button-create-spot" type="submit">Update Your Spot</button>
             </form>
         </div>
     )
