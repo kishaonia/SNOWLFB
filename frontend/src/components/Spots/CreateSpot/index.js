@@ -60,7 +60,7 @@ const onSubmit = async (e) => {
     }
     if (previewImage) {
         if (
-            !(previewImage.endsWith(".jpeg") || previewImage.endsWith(".png") || previewImage.endsWith(".jpeg"))
+            !(previewImage.endsWith(".jpg") || previewImage.endsWith(".png") || previewImage.endsWith(".jpeg"))
         )
             error.previewImage = "The image url needs to end in .jpeg, .png, or jpeg"
     }

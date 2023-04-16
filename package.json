@@ -22,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kishaonia/pleaseplease.issues"
+    "url": "https://github.com/kishaonia/pleaseplease/issues"
   },
-  "homepage": "https://github.com/kishaonia/pleaseplease.git",
+  "homepage": "https://github.com/kishaonia/pleaseplease#readme",
   "dependencies": {
     "js-cookie": "^3.0.1"
     
