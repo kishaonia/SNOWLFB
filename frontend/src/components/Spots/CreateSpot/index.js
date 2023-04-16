@@ -67,25 +67,25 @@ const onSubmit = async (e) => {
 
     if (image2){
         if (
-            !(image2.endsWith(".jpeg") || image2.endsWith(".png") || image2.endsWith(".jpeg"))
+            !(image2.endsWith(".jpg") || image2.endsWith(".png") || image2.endsWith(".jpeg"))
         )
         error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
     }
     if (image3) {
         if (
-            !(image3.endsWith(".jpeg") || image3.endsWith(".png") || image3.endsWith(".jpeg"))
+            !(image3.endsWith(".jpg") || image3.endsWith(".png") || image3.endsWith(".jpeg"))
         )
             error.image3 = "The image url needs to end in .jpeg, .png, or jpeg"
     }
     if (image4) {
         if (
-            !(image4.endsWith(".jpeg") || image4.endsWith(".png") || image4.endsWith(".jpeg"))
+            !(image4.endsWith(".jpg") || image4.endsWith(".png") || image4.endsWith(".jpeg"))
         )
             error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
     }
     if (image5) {
         if (
-            !(image5.endsWith(".jpeg") || image5.endsWith(".png") || image5.endsWith(".jpeg"))
+            !(image5.endsWith(".jpg") || image5.endsWith(".png") || image5.endsWith(".jpeg"))
         )
             error.image5 = "The image url needs to end in .jpeg, .png, or jpeg"
     }
@@ -167,6 +167,7 @@ return (
     {Object?.keys(error).length ? <h5>{error?.country && <span className="error">{error?.country}</span>}</h5> : <h7></h7>}
     <input
     type="text"
+    placeHolder="Country"
     value={country}
     
     onChange={e => setCountry(e.target.value)}
@@ -176,7 +177,7 @@ return (
         <input
             type="text"
             value= {address}
-           
+           placeHolder="Address"
             onChange={e => setAddress(e.target.value)}
         />
         <label className="create-spot-label">City</label>
@@ -185,7 +186,7 @@ return (
         <input
         type="text"
         value={city}
-      
+       placeHolder="City"
         onChange={e => setCity(e.target.value)}
         />
         <label className="create-spot-label">State</label>
@@ -193,7 +194,7 @@ return (
         <input
         type="text"
         value= {state}
-    
+        placeHolder= "State"
         onChange={e => setState(e.target.value)}
         />
          <label className="create-spot-label">Description</label>

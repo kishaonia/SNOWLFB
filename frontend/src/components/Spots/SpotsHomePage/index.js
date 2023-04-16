@@ -10,6 +10,7 @@ const SpotsHomePage = () => {
     const history = useHistory();
     const allSpots = useSelector(state => state?.spots)
     const allSpotsValues = Object?.values(allSpots)
+    const starIcon = "\u2605"
     console.log('All Spots', allSpotsValues)
 
  useEffect(() => {
@@ -22,15 +23,15 @@ const SpotsHomePage = () => {
     return (
         <div className='all-spots'>
         {allSpotsValues?.map(spotValues => {
+            console.log('spotValues', spotValues)
             return (
                 <NavLink key={spotValues?.id} className="navContainer" to={`/spots/${spotValues?.id}`}>
-            <div className='navImage'>
+            <div className='navImageHome' data-tooltip={spotValues?.name}>
             <img src={spotValues?.previewImage} alt="Preview-Image"/>
              </div>
              <div className='navSpotDetails'>
-            <div>{spotValues?.city}, {spotValues?.state}</div>
+                        <div className="city-rating"><span>{spotValues?.city}, {spotValues?.state}</span><span>{starIcon} {parseInt(spotValues.avgRating) ? Number(spotValues?.avgRating).toFixed(1) : "New"}</span></div>
             <div>$ {spotValues?.price?.toFixed(2)} per night</div>
-            <div className="avgRating">{spotValues?.avgRating}</div>
              </div>
 </NavLink>
 

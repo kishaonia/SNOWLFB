@@ -9,7 +9,7 @@ export default function DeleteOneReview({ reviewId }) {
 console.log('checking reviewId', reviewId)
     const onSubmit = async (e) => {
         e.preventDefault();
-        dispatch(deleteOneReviewThunk(reviewId))
+       await dispatch(deleteOneReviewThunk(reviewId))
         closeModal()
     }
 
@@ -20,7 +20,7 @@ console.log('checking reviewId', reviewId)
     return (
 
         <div className="review-delete-form-div">
-            <div className="title">Are you sure you want to delete this review?</div>
+            <div className="delete-review-button">Are you sure you want to delete this review?</div>
             <ul className="errors">
                 {/* {errors.map((error, idx) => (
             <li key={idx}>{error}</li>

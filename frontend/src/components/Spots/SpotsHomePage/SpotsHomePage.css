@@ -4,12 +4,16 @@
   justify-content: space-between;
   padding: 40px;
   margin-top: 100px;
+  padding: 80px;
   
   
 }
 
 
-
+.city-rating {
+  display: flex;
+  justify-content: space-between;
+}
 .navContainer {
   width: calc(33.33% - 10px);
   margin-bottom: 20px;
@@ -36,14 +40,27 @@
   visibility: visible;
 }
 
-.navImage {
+.navImageHome {
   height: 0;
   padding-bottom: 66.666%;
   position: relative;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
 }
+.navImageHome::before,
+.navImageHome::after {
+  position: absolute;
+  content:"";
+  height: 100px;
+  width: 100px;
+  top:-.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: pink;
 
-.navImage img {
+}
+.navImageHome img {
   position: absolute;
   top: 0;
   left: 0;

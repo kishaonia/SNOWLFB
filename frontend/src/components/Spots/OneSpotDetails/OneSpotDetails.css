@@ -1,7 +1,7 @@
 .page-wrapper-one-spot {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px;
+    margin-top: 150px;
+    margin-left: 50px;
   }
   
   .spots-h1 {
@@ -14,6 +14,10 @@
     font-size: 20px;
     margin-bottom: 20px;
   }
+
+    .error {
+      color: red;
+    }
   
   /*.spot-detail-image + img  {
     max-width: 20%;
@@ -77,12 +81,13 @@
     color: #484848;
   }
   .create-review-form-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
+  
+    width: 500px;
+    margin: 30px;
+    font-size: 30px;
+    font-weight: bold;
+  text-align: center;
+
   }
   
   .title-review {
@@ -103,6 +108,7 @@
     flex-direction: column;
     width: 100%;
     width: 500px;
+    
   }
   
   .entries-review {
@@ -118,6 +124,7 @@
     font-size: 1rem;
     height: 100px;
     width: 475px;
+    margin-left: 10px;
 
   }
   
@@ -147,7 +154,7 @@
     font-size: 1rem;
   }
 
-  .post-review {
+  /* .post-review {
     display: inline-block;
     padding: 10px 20px;
     color: #fff;
@@ -161,4 +168,130 @@
   .post-review:hover {
     display: flex;
   }
+   */
+
+   .dividing-line {
+    border-top: 1px solid black;
+  }
+  
+  .review-details ul {
+    list-style: none;
+    font-size: 15px; 
+    
+  }
+  .review-details li:first-child {
+    font-size: 15px; 
+
+    
+  }
+  
+
+  .review-details {
+    margin-bottom: 20px;
+  }
+  
+  .review-details li:first-child {
+    font-weight: bold;
+  }
+  
+  .review-details button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .review-details button:hover {
+    background-color: #c82333;
+  }
+  
+    .pop-up-reservation {
+      position: fixed;
+      bottom: 15%;
+      right: 3%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      height: 75px;
+    }
+  
+  
+  .howmuch {
+    font-size: 15px;
+    margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+  }
+  
+  .reserve-button {
+  
+    background-color: #eda6c3;
+    border: none;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    width: 350px;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+  }
+  
+  .reserve-button:hover {
+    background-color: #f5769e;
+    text-decoration: none;
+  }
+  
+  .reserve-button:active {
+    background-color: #e7528d;
+  }
+  
+  .reviews-and-star{
+    display: flex;
+  }
+
+  .review-date{
+    color: gray;
+    font-style: italic;
+    font-size: 5px;
+    padding-bottom: 10px;
+  }
+  .review-name{
+    color: black;
+  }
+
+  .delete-your-review-button {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 6px 12px;
+    font-size: 7px;
+    width: 100px;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #c4bcbc;
+  }
+  
+  .delete-your-review-button:hover,
+  .delete-your-review-button:focus,
+  .delete-your-review-button:active {
+    color: #fff;
+    background-color: #ac9595;
+    border-color: #a38d8c;
+  }
+  
   

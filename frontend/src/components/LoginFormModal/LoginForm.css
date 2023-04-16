@@ -19,3 +19,8 @@ h1.login-h1{
 button.button-submit{
 width: 75px;
 }
+
+.login-form li {
+    list-style-type: none;
+    color: red;
+}

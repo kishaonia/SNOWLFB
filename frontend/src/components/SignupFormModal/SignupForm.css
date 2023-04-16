@@ -13,3 +13,8 @@ form.signup-form{
     justify-content: space-evenly;
 
 }
+
+.signup-form li {
+    color: red;
+    list-style-type: none;
+}

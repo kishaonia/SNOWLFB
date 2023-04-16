@@ -1,44 +1,46 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 95%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 20px;
+}
 
-.full-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .left-nav-bar img {
-    display: block;
-  }
-  
-  .right-nav-bar {
-    display: flex;
-    align-items: center;
-  }
-  
-  .right-nav-bar > * {
-    margin-right: 1rem;
-  }
-  
-  
-  .create-spot-link {
-    font-weight: bold;
-    color: #000000;
-    text-decoration: none;
-    font-size: 20px;
-    display: flex;
-  }
-  
-  .create-spot-link:hover {
-    text-decoration:dotted;
-    color: rgb(90, 126, 126);
-  }
-  
-  .profile-button {
-    margin-right: 1rem;
-    position: sticky;
-    
-    
-  }
-  
+.left-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.left-nav-bar img {
+  height: 100px;
+  width: 300px;
+}
+
+.right-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.create-spot-link {
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 1rem;
+}
+
+.create-spot-link:hover {
+  text-decoration: dotted;
+  color: rgb(90, 126, 126);
+}
+
+.profile-button {
+  margin-right: 1rem;
+}

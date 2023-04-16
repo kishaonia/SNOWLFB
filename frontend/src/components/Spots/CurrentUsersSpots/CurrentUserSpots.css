@@ -122,3 +122,116 @@
         width: 100%;
     }
 }
+
+.delete-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.spot-button-delete {
+  background-color: rgb(242, 176, 209);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
+ 
+}
+
+button#deleteSpot-button{
+  height: 50px;
+  width: 600px;
+  text-decoration: none;
+}
+.spot-button-delete:hover {
+  background-color: rgb(218, 184, 207);
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(204, 149, 149);
+  
+}
+
+
+.delete-review-button {
+  margin: 20px;
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.manage-your-spots-create {
+  display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-around;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+.createspot-manage {
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+.create-spot-link-bottom {
+  display: inline-block;
+  background-color: #f08ece;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.create-spot-link-bottom:hover {
+  background-color: #f8bdfe;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.create-spot-link-bottom {
+  display: block;
+  margin-top: 10px;
+}
+
+
+.spot-delete-form-div{
+  height: 160px;
+  width: 600px;
+  margin: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+button#no-cancel-button{
+  font-size: 15px;
+position:absolute;  
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  left: 41%;
+  margin-top: 20px;
+}
+

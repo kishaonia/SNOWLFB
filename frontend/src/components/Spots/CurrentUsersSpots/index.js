@@ -10,6 +10,7 @@ import './CurrentUserSpots.css'
 const CurrentUserSpots = () => {
     const dispatch = useDispatch();
     const allSpotsValues = useSelector(state => Object?.values(state?.spots))
+    const sessionUser = useSelector(state => state?.session?.user) // Add this line to define sessionUser
 
     useEffect(() => {
         dispatch(getCurrentUserSpotsThunk())
@@ -19,8 +20,16 @@ const CurrentUserSpots = () => {
         return null
     }
     return (
-        <div className='edit-all-spots'>
-            
+        <>
+             <div className="manage-your-spots-create">
+                <div className="createspot-manage">Manage Your Spot</div>
+                
+        {sessionUser && (
+          <NavLink className="create-spot-link-bottom" exact to="/spots/new">
+            Create a Spot
+          </NavLink>
+        )}
+      </div>
             {allSpotsValues?.map(spotValues => {
                 return (
                     <nav key={spotValues?.id} className='current-Spots'>
@@ -36,7 +45,7 @@ const CurrentUserSpots = () => {
                         </NavLink>
                         <div className="update-delete-button">
                             <div>
-                             <button><NavLink to={`/spots/${spotValues?.id}/edit`}>Update Spot</NavLink></button>
+                             <button className="update-spot-button"><NavLink to={`/spots/${spotValues?.id}/edit`}>Update Spot</NavLink></button>
                                 <button className="delete-spot-button" >
                                     <OpenModalMenuItem
                                          itemText="Delete Spot"
@@ -48,7 +57,7 @@ const CurrentUserSpots = () => {
                 )
             })}
 
-        </div>
+        </>
     )
 }
 

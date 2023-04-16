@@ -62,16 +62,19 @@ function ProfileButton({ user }) {
           {user ? (
             <>
               <li>
-                Hello, {user.firstName} {user.lastName}!
+                Hello, {user.username}!
               </li>
-              <li>{user.username}</li>
-              <li>
+              <li>{user.email}</li>
+            
+              <div className='dividing-line'> </div>
                 <NavLink exact to="/spots/current">
                   Manage Your Spots
                 </NavLink>
-              </li>
-              <li>{user.email}</li>
+              
+            
               <li>
+              <div className='dividing-line'> </div>
+              
                 <button className="button-logout" onClick={logout}>
                   Log Out
                 </button>

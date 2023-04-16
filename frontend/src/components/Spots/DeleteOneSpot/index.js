@@ -20,7 +20,7 @@ const onCancel = (e) => {
 return (
    
     <div className="spot-delete-form-div">
-    <div className="title">Are you sure you want to delete this spot?</div>
+    <div className="title-delete-form">Are you sure you want to delete this spot?</div>
     <ul className="errors">
         {/* {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -28,8 +28,8 @@ return (
     </ul>
             <form onSubmit={onSubmit}>
         <div className="delete-spot-form">
-        <button type="submit" className="spot-button-delete" id="deleteSpot-button" >Yes, Delete This Spot.</button>
-        <button type="submit" onClick={onCancel}>No, cancel</button>
+        <button type="submit-button-delete" className="spot-button-delete" id="deleteSpot-button" >Yes, Delete This Spot.</button>
+        <button type="submit-button-submit" id="no-cancel-button" onClick={onCancel}>No, cancel</button>
         </div>
             </form>
 </div>
@@ -37,3 +37,4 @@ return (
 )
 
 }
+

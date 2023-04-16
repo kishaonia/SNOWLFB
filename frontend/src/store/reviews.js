@@ -33,7 +33,7 @@ export const deleteOneReviewThunk = (reviewId) => async dispatch => {
     });
     if (response.ok) {
         const deleteReview = await response.json();
-        dispatch(deleteReview(reviewId))
+        dispatch(deleteOneReviewAction(reviewId))
     }
 }
 export const createReviewThunk = (reviewData, spotId) => async dispatch => {
