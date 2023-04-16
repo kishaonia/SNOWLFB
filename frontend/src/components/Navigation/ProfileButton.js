@@ -41,43 +41,44 @@ function ProfileButton({ user }) {
     history.push("/");
   };
 
-  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "");
+  const demoSignIn = (e) => {
+    e.preventDefault();
+    const password = "password5"
+    const credential = "demouser@gmail.com"
+    dispatch(sessionActions.login({ credential, password }));
+    closeMenu();
+  }
+
+  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "" ) ;
 
   return (
     <>
- <button onClick={openMenu} className="drop-down-menu">
+      <button onClick={openMenu} className="drop-down-menu">
         <i className="fa fa-bars" aria-hidden="true"></i>
         <i className="fa fa-user-circle-o"></i>
       </button>
-    <div className="profile-menu">
-    
-      {/* <div onClick={openMenu} className="drop-down-menu">
-        <i className="fa fa-bars" aria-hidden="true"></i>
-        <i className="fa fa-user-circle-o"></i>
-      </div> */}
-
-      <ul className={ulClassName} ref={ulRef}>
-        {user ? (
-          <>
-            <li>
-              Hello, {user.firstName} {user.lastName}!
-            </li>
-
-            <li>{user.username}</li>
-            <li>
-              <NavLink exact to="/spots/current">
-                Manage Your Spots
-              </NavLink>
-            </li>
-            <li>{user.email}</li>
-            <li>
-              <button className="button-logout" onClick={logout}>Log Out</button>
-            </li>
-          </>
-        ) : (
-          <>
-            
-              
+      <div className="profile-menu">
+        <ul className={ulClassName} ref={ulRef}>
+          {user ? (
+            <>
+              <li>
+                Hello, {user.firstName} {user.lastName}!
+              </li>
+              <li>{user.username}</li>
+              <li>
+                <NavLink exact to="/spots/current">
+                  Manage Your Spots
+                </NavLink>
+              </li>
+              <li>{user.email}</li>
+              <li>
+                <button className="button-logout" onClick={logout}>
+                  Log Out
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
               <OpenModalMenuItem
                 itemText="Log In"
                 onItemClick={closeMenu}
@@ -88,11 +89,15 @@ function ProfileButton({ user }) {
                 onItemClick={closeMenu}
                 modalComponent={<SignupFormModal />}
               />
-            
-          </>
-        )}
-      </ul>
-    </div>
+              {!user && (
+                <button onClick={demoSignIn} type="submit" id='demo-user-button'>
+                  Demo User
+                </button>
+              )}
+            </>
+          )}
+        </ul>
+      </div>
     </>
   );
 }

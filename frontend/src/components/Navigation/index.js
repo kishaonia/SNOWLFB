@@ -50,9 +50,9 @@ function Navigation({ isLoaded }) {
           </NavLink>
         )}
       
-        <div className='profile-button'>
+        <button className='profile-button'>
            <ProfileButton user={sessionUser} />
-        </div>
+        </button>
       </div>
     </div>
   </ul>

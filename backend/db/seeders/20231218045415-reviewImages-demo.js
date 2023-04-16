@@ -30,12 +30,12 @@ module.exports = {
     preview:false
   },
   {
-    reviewI:3,
+    reviewId:3,
     url:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/92/e4/97/disneyland-paris.jpg?w=1200&h=1200&s=1',
     preview:false
   },
   {
-    spotId:4,
+    reviewId:4,
     url:'https://secure.cdn1.wdpromedia.cn/resize/mwImage/1/720/288/75/wdpromedia.disney.go.com/media/wdpro-shdr-assets/prod/en-cn/system/images/shdr-theme-park-shanghai-disneyland-park-hero-full-new.jpg',
     preview:true
       },

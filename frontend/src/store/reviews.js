@@ -45,11 +45,18 @@ export const createReviewThunk = (reviewData, spotId) => async dispatch => {
     if (response.ok) {
         const reviewCreated = response.json()
         dispatch(createReviewAction(reviewCreated))
+   
     }
+   
 }
+
 const initialState = {
 
 }
+// export const deleteReviewThunk = (reviewId) => async dispatch =>
+// const initialState = {
+
+// }
 const reviewsReducer = (state= initialState, action) => {
 let newReviewsState;
 switch(action.type) {

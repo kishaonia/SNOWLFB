@@ -5,7 +5,10 @@
   padding: 40px;
   margin-top: 100px;
   
+  
 }
+
+
 
 .navContainer {
   width: calc(33.33% - 10px);
@@ -17,10 +20,22 @@
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
 }
+.navContainer.toolTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(0, 0, 0);
+  color: #1c0808;
+  position: absolute;
+  z-index: 1;
+}
 
 .navContainer:hover {
   transform: translateY(-5px);
 }
+.navContainer:hover .navContainer.toolTipText {
+  visibility: visible;
+}
+
 .navImage {
   height: 0;
   padding-bottom: 66.666%;

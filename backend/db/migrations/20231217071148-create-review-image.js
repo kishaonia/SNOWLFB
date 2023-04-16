@@ -20,6 +20,10 @@ module.exports = {
         references: { model: 'Reviews' },
         onDelete: "CASCADE"
       },
+      preview: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
       url: {
         type: Sequelize.STRING
       },

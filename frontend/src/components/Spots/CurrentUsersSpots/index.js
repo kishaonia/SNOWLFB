@@ -13,7 +13,7 @@ const CurrentUserSpots = () => {
 
     useEffect(() => {
         dispatch(getCurrentUserSpotsThunk())
-    }, [dispatch])
+    }, [dispatch, JSON?.stringify(allSpotsValues)])
 
     if (!allSpotsValues) {
         return null
