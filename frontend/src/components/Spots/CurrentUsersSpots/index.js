@@ -30,6 +30,7 @@ const CurrentUserSpots = () => {
           </NavLink>
         )}
       </div>
+      
       {allSpotsValues?.map((spotValues) => {
         return (
           <nav key={spotValues?.id} className="current-Spots">
@@ -44,7 +45,7 @@ const CurrentUserSpots = () => {
                 <div>
                   {spotValues?.city}, {spotValues?.state}
                 </div>
-                <div>$ {spotValues?.price?.toFixed(2)} per night</div>
+                <div>$ {spotValues?.price?.toFixed(2)}/ night</div>
                 <div className="avgRating">&#9733; {spotValues?.avgRating}</div>
               </div>
             </NavLink>

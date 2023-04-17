@@ -20,29 +20,41 @@ function App() {
     }, [dispatch]);
 
     return (
-        <>
-          <Navigation isLoaded={isLoaded}/> 
-          {isLoaded && (
-                <Switch>
-                    <Route exact path="/">
-                        <SpotsHomePage/>
-                    </Route>
-                    <Route exact path="/spots/current">
-                        <CurrentUserSpots/>
-                    </Route>
-                    <Route exact path="/spots/new">
-                        <CreateSpot/>
-                    </Route>
-                    <Route exact path="/spots/:spotId">
-                        <OneSpotDetails />
-                    </Route>
-                    <Route exact path="/spots/:spotId/edit">
-                        <EditSpot />
-                    </Route>
-                </Switch>
-            )} 
-
-        </>
+      <>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+            <Route exact path="/">
+              <SpotsHomePage />
+            </Route>
+            <Route exact path="/spots/current">
+              <CurrentUserSpots />
+            </Route>
+            <Route exact path="/spots/new">
+              <CreateSpot />
+            </Route>
+            <Route exact path="/spots/:spotId">
+              <OneSpotDetails />
+            </Route>
+            <Route exact path="/spots/:spotId/edit">
+              <EditSpot />
+            </Route>
+          </Switch>
+        )}
+        {!isLoaded && (
+          <Switch>
+            <Route exact path="/spots/:spotId">
+              Unable to retrieve details. Please try again shortly!
+            </Route>
+            <Route exact path="/">
+              Unable to retrieve spots. Please try again shortly!
+            </Route>
+            {/* <Route exact path="/spots/:spotId">
+              Unable to retrieve details. Please try again shortly!
+            </Route> */}
+          </Switch>
+        )}
+      </>
     );
 }
 

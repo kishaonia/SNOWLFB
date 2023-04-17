@@ -33,8 +33,8 @@ export default function CreateReview({spotId}) {
           stars: stars
       }
 
-      dispatch(createReviewThunk(reviewCreated, spotId))
-      dispatch(getSpotsReviewsThunk(spotId)) 
+      await dispatch(createReviewThunk(reviewCreated, spotId))
+      await dispatch(getSpotsReviewsThunk(spotId)) 
       closeModal();
 
   }
@@ -67,7 +67,7 @@ export default function CreateReview({spotId}) {
                       type="text-create"
                       placeholder="Leave your review here"
                       value={review}
-                      onChange={(e) => setReview(e.target.value)}
+                      onChange={(e) => setReview(e?.target?.value)}
                       required
                       />
                       <label htmlFor="address">
@@ -77,7 +77,18 @@ export default function CreateReview({spotId}) {
                   <div className="entries-review star-rating">
                       {starIcons}
                   </div>
-                  <button type="submit" onSubmit={handleSubmit} className="submit-button" id="leave-review-button">Submit Your Review</button>
+                  <button 
+          disabled={
+           !review || review?.length < 10 || 
+stars > 5 || stars > 5
+              ? true
+              : false
+          }
+          type="submit"
+          className="button-submit-review"
+        >
+          Submit Your Review
+        </button>
               </form>
           </ul>
       </div>

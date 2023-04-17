@@ -45,7 +45,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     const password = "password5"
     const credential = "demouser@gmail.com"
-    dispatch(sessionActions.login({ credential, password }));
+    dispatch(sessionActions?.login({ credential, password }));
     closeMenu();
   }
 
@@ -62,9 +62,9 @@ function ProfileButton({ user }) {
           {user ? (
             <>
               <li>
-                Hello, {user.firstName}!
+                Hello, {user?.firstName}!
               </li>
-              <li>{user.email}</li>
+              <li>{user?.email}</li>
             
               <div className='dividing-line'> </div>
                 <NavLink exact to="/spots/current">
@@ -74,7 +74,7 @@ function ProfileButton({ user }) {
             
               <li>
               <div className='dividing-line'> </div>
-              <br></br>
+            
                 <button className="button-logout" onClick={logout}>
                   Log Out
                 </button>

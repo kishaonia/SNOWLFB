@@ -28,8 +28,8 @@ console.log('checking reviewId', reviewId)
             </ul>
             <form onSubmit={onSubmit}>
                 <div className="delete-review-form">
-                    <button type="submit" className="spot-button-delete" id="deleteReview-button" >Yes, Delete This Review.</button>
-                    <button type="submit" onClick={onCancel}>No, cancel</button>
+                    <button type="submit" className="spot-button-delete" id="deleteReview-button" >Yes, Delete This Review</button>
+                    <button className="review-delete-button" type="submit" onClick={onCancel}>No, keep this review</button>
                 </div>
             </form>
         </div>

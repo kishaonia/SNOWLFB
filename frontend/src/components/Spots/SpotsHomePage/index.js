@@ -46,7 +46,7 @@ const SpotsHomePage = () => {
                     : "New"}
                 </span>
               </div>
-              <div>$ {spotValues?.price?.toFixed(2)} per night</div>
+              <div>$ {spotValues?.price?.toFixed(2)} / night</div>
             </div>
           </NavLink>
         );

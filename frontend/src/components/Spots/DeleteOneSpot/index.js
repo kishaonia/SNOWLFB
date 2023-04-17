@@ -29,7 +29,7 @@ return (
             <form onSubmit={onSubmit}>
         <div className="delete-spot-form">
         <button type="submit-button-delete" className="spot-button-delete" id="deleteSpot-button" >Yes, Delete This Spot.</button>
-        <button type="submit-button-submit" id="no-cancel-button" onClick={onCancel}>No, cancel</button>
+        <button type="submit-button-submit" id="spot-button-delete-no" onClick={onCancel}>No, cancel</button>
         </div>
             </form>
 </div>

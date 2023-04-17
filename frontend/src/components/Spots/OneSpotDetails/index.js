@@ -31,10 +31,14 @@ const OneSpotDetails = () => {
     return null;
   }
 
+  if (!spotId) {
+    return null
+  }
+
   return (
     <div className="page-wrapper-one-spot">
       <h1 className="spots-h1">{spotDetailsValues?.name}</h1>
-      <div className="spot-details-address">{`${spotDetailsValues?.city}, ${spotDetailsValues.state}, ${spotDetailsValues.country}`}</div>
+      <div className="spot-details-address">{`${spotDetailsValues?.city}, ${spotDetailsValues?.state}, ${spotDetailsValues?.country}`}</div>
       <div className="spot-detail-pics">
         {spotDetailsValues?.SpotImages?.map(
           (spotImage) =>
@@ -69,7 +73,7 @@ const OneSpotDetails = () => {
             {" "}
             <span>
               {" "}
-              ${Number(spotDetailsValues?.price)?.toFixed(2)} per night
+              ${Number(spotDetailsValues?.price)?.toFixed(2)}/ night
             </span>{" "}
             {starIcon} New
           </div>
@@ -77,7 +81,7 @@ const OneSpotDetails = () => {
           <div>
             <span>
               {" "}
-              ${Number(spotDetailsValues?.price)?.toFixed(2)} per night{" "}
+              ${Number(spotDetailsValues?.price)?.toFixed(2)}/ night{" "}
             </span>{" "}
             {starIcon} {Number(spotDetailsValues?.avgStarRating)?.toFixed(1)} ·{" "}
             {spotDetailsValues?.numReviews} Review

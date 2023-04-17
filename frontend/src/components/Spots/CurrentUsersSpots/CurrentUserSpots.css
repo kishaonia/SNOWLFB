@@ -154,7 +154,24 @@ button#deleteSpot-button{
 .spot-button-delete:hover {
   background-color: rgb(218, 184, 207);
 }
+.spot-button-delete-no{
+  background-color: rgb(239, 51, 51);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
 
+}
+button#spot-button-delete-no{
+  height: 50px;
+  width: 600px;
+  text-decoration: none;
+  background-color: #484848;
+  color: #ebebeb;
+}
 button[type="submit"] {
   margin-top: 20px;
   padding: 10px 20px;
@@ -224,12 +241,29 @@ button[type="submit"] {
 }
 
 button#no-cancel-button{
-  font-size: 15px;
 position:absolute;  
   justify-content: center;
   align-items: center;
   text-decoration: none;
   left: 41%;
   margin-top: 20px;
+  background-color: rgb(101, 96, 96);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
+.review-delete-button{
+  background-color: rgb(101, 96, 96);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
+}

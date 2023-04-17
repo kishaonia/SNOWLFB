@@ -237,8 +237,7 @@ export default function CreateSpot() {
                     placeholder="Preview Image URL"
                     onChange={e => setPreviewImage(e.target.value)}
                 />
-                <label className="create-spot-label">Image URL
-                    </label>
+      
                     <div className="description-caption">Upload in jpeg, jpg, or png format only.</div>
                     
                 {error?.image2 && <span className="error">{error?.image2}</span>}
