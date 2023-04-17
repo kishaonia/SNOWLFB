@@ -29,8 +29,7 @@ const CurrentUserSpots = () => {
             Create a Spot
           </NavLink>
         )}
-      </div>
-      
+    <div className="current-container">
       {allSpotsValues?.map((spotValues) => {
         return (
           <nav key={spotValues?.id} className="current-Spots">
@@ -41,13 +40,20 @@ const CurrentUserSpots = () => {
               <div className="edit-navImage">
                 <img src={spotValues?.previewImage} alt="Preview-Image" />
               </div>
-              <div className="edit-navSpotDetails">
-                <div>
+
+              <div className="city-rating">
+                <span>
                   {spotValues?.city}, {spotValues?.state}
-                </div>
-                <div>$ {spotValues?.price?.toFixed(2)}/ night</div>
-                <div className="avgRating">&#9733; {spotValues?.avgRating}</div>
+                </span>
+                {/* <div>$ {spotValues?.price?.toFixed(2)}/ night</div> */}
+                <span>
+                  &#9733;{" "}
+                  {parseInt(spotValues.avgRating)
+                    ? Number(spotValues?.avgRating).toFixed(1)
+                    : "New"}
+                </span>
               </div>
+              <div>$ {spotValues?.price?.toFixed(2)}/ night</div>
             </NavLink>
             <div className="update-delete-button">
               <div>
@@ -66,7 +72,11 @@ const CurrentUserSpots = () => {
             </div>
           </nav>
         );
-      })}
+        
+      }
+       )}
+       </div>
+       </div>
     </>
   );
 };

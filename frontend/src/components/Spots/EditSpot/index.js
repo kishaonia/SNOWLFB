@@ -181,74 +181,117 @@ useEffect(() => {
 
     }
     return (
-        <div className="page-edit-spot">
-            
-            <form className="edit-spot-form" onSubmit={onSubmit}>
-                <div className="createanewspot"> Edit Spot</div>
-                {/* <br></br> */}
-                <div className="whereisyourplacelocated">Where's your place located?</div>
-                <h4>Guests will only get your exact address once they booked a reservation</h4>
-                <label className="create-spot-label">Country</label>
-                {Object?.keys(error).length ? <h5>{error?.country && <span className="error">{error?.country}</span>}</h5> : <h7></h7>}
-                <input
-                    type="text"
-                    placeholder={spotDetails?.country}
-                    value={country}
+      <div className="page-edit-spot">
+        <form className="edit-spot-form" onSubmit={onSubmit}>
+          <div className="createanewspot"> Edit Spot</div>
+          {/* <br></br> */}
+          <div className="whereisyourplacelocated">
+            Where's your place located?
+          </div>
+          <h4>
+            Guests will only get your exact address once they booked a
+            reservation
+          </h4>
+          <label className="create-spot-label">Country</label>
+          {Object?.keys(error).length ? (
+            <h5>
+              {error?.country && (
+                <span className="error">{error?.country}</span>
+              )}
+            </h5>
+          ) : (
+            <h7></h7>
+          )}
+          <input
+            type="text"
+            placeholder={spotDetails?.country}
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+          <label className="create-spot-label">Street Address</label>
+          {Object?.keys(error).length ? (
+            <h5>
+              {error?.address && (
+                <span className="error">{error?.address}</span>
+              )}
+            </h5>
+          ) : (
+            <h7></h7>
+          )}
+          <input
+            type="text"
+            value={address}
+            placeHolder={spotDetails?.address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <label className="create-spot-label">City</label>
 
-                    onChange={e => setCountry(e.target.value)}
-                />
-                <label className="create-spot-label">Street Address</label>
-                {Object?.keys(error).length ? <h5>{error?.address && <span className="error">{error?.address}</span>}</h5> : <h7></h7>}
-                <input
-                    type="text"
-                    value={address}
-                    placeHolder={spotDetails?.address}
-                    onChange={e => setAddress(e.target.value)}
-                />
-                <label className="create-spot-label">City</label>
-
-                {Object?.keys(error).length ? <h5>{error?.city && <span className="error">{error?.city}</span>}</h5> : <h7></h7>}
-                <input
-                    type="text"
-                    value={city}
-                    placeHolder={spotDetails?.city}
-                    onChange={e => setCity(e.target.value)}
-                />
-                <label className="create-spot-label">State</label>
-                {error?.state && <span className="error">{error?.state}</span>}
-                <input
-                    type="text"
-                    placeHolder={spotDetails?.state}
-                    value={state}
-
-                    onChange={e => setState(e.target.value)}
-                />
-                <label className="create-spot-label">Description</label>
-                {error?.description && <span className="error">{error?.description}</span>}
-                <input
-                    type="text"
-                    value={description}
-                    placeholder={spotDetails?.description}
-                    onChange={e => setDescription(e.target.value)}
-                />
-                <label className="create-spot-label">Name of your spot</label>
-                {error?.name && <span className="error">{error?.name}</span>}
-                <input
-                    type="text"
-                    value={name}
-                    placeholder={spotDetails?.name}
-                    onChange={e => setName(e.target.value)}
-                />
-                <label className="create-spot-label">Price</label>
-                {error?.price && <span className="error">{error?.price}</span>}
-                <input
-                    type="text"
-                    value={price}
-                    placeholder={spotDetails?.price}
-                    onChange={e => setPrice(e.target.value)}
-                />
-                {/* <label className="create-spot-label">Preview Image URL</label> */}
-                {/* {error?.previewImage && <span className="error">{error?.previewImage}</span>}
+          {Object?.keys(error).length ? (
+            <h5>
+              {error?.city && <span className="error">{error?.city}</span>}
+            </h5>
+          ) : (
+            <h7></h7>
+          )}
+          <input
+            type="text"
+            value={city}
+            placeHolder={spotDetails?.city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <label className="create-spot-label">State</label>
+          {error?.state && <span className="error">{error?.state}</span>}
+          <input
+            type="text"
+            placeHolder={spotDetails?.state}
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+          />
+          <label className="create-spot-label">Description</label>
+          <div className="description-caption">
+            Mention the best features of your space, any special amentities
+            <br></br> like fast wif or parking, and what you love about the
+            neighborhood.
+          </div>
+          {error?.description && (
+            <span className="error">{error?.description}</span>
+          )}
+          <input
+            type="text"
+            value={description}
+            placeholder={spotDetails?.description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <label className="create-spot-label">
+            Create a title for your spot
+          </label>
+          <div className="description-caption">
+            Catch guests' attention with a spot title that highlights what makes
+            your place special.
+          </div>
+          {error?.name && <span className="error">{error?.name}</span>}
+          <input
+            type="text"
+            value={name}
+            placeholder={spotDetails?.name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label className="create-spot-label">
+            Set a base price for your spot
+          </label>
+          <div className="description-caption">
+            Competitive pricing can help your listing stand out and rank higher
+            in search results.
+          </div>
+          {error?.price && <span className="error">{error?.price}</span>}
+          <input
+            type="text"
+            value={price}
+            placeholder={spotDetails?.price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          {/* <label className="create-spot-label">Preview Image URL</label> */}
+          {/* {error?.previewImage && <span className="error">{error?.previewImage}</span>}
                 <input
                     type="text"
                     value={previewImage}
@@ -286,8 +329,10 @@ useEffect(() => {
                     placeholder="Image URL"
                     onChange={e => setImage5(e.target.value)}
                 /> */}
-                <button className="button-create-spot" type="submit">Update Your Spot</button>
-            </form>
-        </div>
-    )
+          <button className="button-create-spot" type="submit">
+            Update Your Spot
+          </button>
+        </form>
+      </div>
+    );
 }
