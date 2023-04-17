@@ -155,7 +155,7 @@ const OneSpotDetails = () => {
                       </li>{" "}
                     </div>
                     <li>{review?.review}</li>
-                    {user?.id === review.userId ? (
+                    {user?.id === review?.userId ? (
                       <div className="delete-your-review-button">
                         <OpenModalMenuItem
                           itemText="Delete Your Review"
@@ -171,7 +171,7 @@ const OneSpotDetails = () => {
                   </ul>
                 </div>
               ))
-          ) : user?.id && reviews?.length === 0 && user?.id !== spotDetailsValues?.Owner.id ?
+          ) : user?.id && reviews?.length === 0 && user?.id !== spotDetailsValues?.Owner?.id ?
         <p>Be the first to post a review!</p> : <></>}
         </div>
       </div>
