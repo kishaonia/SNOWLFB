@@ -52,7 +52,7 @@ function LoginFormModal() {
           />
         </label>
 
-        <button className="button-submit" type="submit">
+        <button className="button-submit-login" type="submit">
           Log In
         </button>
       </form>

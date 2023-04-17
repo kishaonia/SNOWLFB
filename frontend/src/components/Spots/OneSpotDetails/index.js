@@ -13,9 +13,9 @@ const OneSpotDetails = () => {
   const dispatch = useDispatch();
   const { [spotId]: spotDetailsValues } = useSelector((state) => state?.spots);
   const allReviews = useSelector((state) => state?.reviews);
-  const reviews = Object.values(allReviews);
+  const reviews = Object?.values(allReviews);
   console.log("reviews", reviews);
-  const user = useSelector((state) => state?.session.user);
+  const user = useSelector((state) => state?.session?.user);
   const starIcon = "\u2605";
   console.log("user", user);
 
@@ -34,13 +34,13 @@ const OneSpotDetails = () => {
   return (
     <div className="page-wrapper-one-spot">
       <h1 className="spots-h1">{spotDetailsValues?.name}</h1>
-      <div className="spot-details-address">{`${spotDetailsValues.city}, ${spotDetailsValues.state}, ${spotDetailsValues.country}`}</div>
+      <div className="spot-details-address">{`${spotDetailsValues?.city}, ${spotDetailsValues.state}, ${spotDetailsValues.country}`}</div>
       <div className="spot-detail-pics">
         {spotDetailsValues?.SpotImages?.map(
           (spotImage) =>
             spotImage && (
               <img
-                key={spotImage.id}
+                key={spotImage?.id}
                 className="spot-detail-image"
                 src={spotImage?.url}
                 alt="spot-pic"
@@ -50,7 +50,7 @@ const OneSpotDetails = () => {
       </div>
       <h3>
         Hosted by{" "}
-        {`${spotDetailsValues.Owner?.firstName} ${spotDetailsValues.Owner?.lastName}`}
+        {`${spotDetailsValues?.Owner?.firstName} ${spotDetailsValues?.Owner?.lastName}`}
       </h3>
 
       <div
@@ -137,10 +137,10 @@ const OneSpotDetails = () => {
           )}
         </div>
         <div className="all-reviews">
-          {reviews.length ? (
+          {reviews?.length ? (
             reviews
               .sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))
-              .map((review) => (
+              ?.map((review) => (
                 <div className="review-details">
                   <ul>
                     <div className="review-name">
@@ -148,7 +148,7 @@ const OneSpotDetails = () => {
                     </div>
                     <div className="review-date">
                       <li>
-                        {new Date(review?.createdAt).toLocaleDateString(
+                        {new Date(review?.createdAt)?.toLocaleDateString(
                           "en-US",
                           { month: "long", year: "numeric" }
                         )}
