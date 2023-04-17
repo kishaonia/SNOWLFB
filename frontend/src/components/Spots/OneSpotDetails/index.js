@@ -64,20 +64,20 @@ const OneSpotDetails = () => {
 
       <div className="dividing-line"> </div>
       <div className="pop-up-reservation">
-        <div className="howmuch">
+        
           {reviews?.length === 0 ? (
-            <div>
+            <div className="pricefornight">
               {" "}
               <span> ${spotDetailsValues?.price} per night</span> {starIcon} New
             </div>
           ) : reviews?.length === 1 ? (
-            <div>
+            <div> 
               <span> ${spotDetailsValues?.price} per night </span> {starIcon}{" "}
               {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
               {spotDetailsValues?.numReviews} Review
             </div>
           ) : (
-            <div>
+            <div className="review-and-stars">
               <span> ${spotDetailsValues?.price} per night</span> &#9733;{" "}
               {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
               {spotDetailsValues?.numReviews} Reviews{" "}
@@ -94,7 +94,7 @@ const OneSpotDetails = () => {
                   spotDetailsValues?.numReviews
                 } ${reviews?.length === 1 ? "Review" : "Reviews"}`} */}
           {/* </div> */}
-        </div>
+        
         <button
           type="reserve-button"
           onClick={() => alert("This feature is coming")}

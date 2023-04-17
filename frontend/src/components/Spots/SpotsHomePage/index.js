@@ -30,7 +30,8 @@ const SpotsHomePage = () => {
             className="navContainer"
             to={`/spots/${spotValues?.id}`}
           >
-            <div className="navImageHome" data-tooltip={spotValues?.name}>
+            <div className="navImageHome">
+                <div className="data-tool-tip"><span>{spotValues?.name}</span></div>
               <img src={spotValues?.previewImage} alt="Preview-Image" />
             </div>
             <div className="navSpotDetails">

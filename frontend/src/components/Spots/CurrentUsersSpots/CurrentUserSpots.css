@@ -164,10 +164,6 @@ button[type="submit"] {
   text-decoration: none;
 }
 
-button[type="submit"]:hover {
-  background-color: rgb(204, 149, 149);
-  
-}
 
 
 .delete-review-button {

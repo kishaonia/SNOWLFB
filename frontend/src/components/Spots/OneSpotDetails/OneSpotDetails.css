@@ -145,7 +145,7 @@
   }
   
   .submit-button {
-    background-color: #c6a9be;
+    background-color: #d25673;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -219,20 +219,17 @@
       height: 75px;
     }
   
-  
-  .howmuch {
-    font-size: 15px;
-    margin-bottom: 1rem;
-    list-style: none;
+
+ .pricefornight{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+  .review-and-stars{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-    
   }
-
- 
-  
   .reserve-button {
   
     background-color: #eda6c3;
@@ -246,6 +243,7 @@
     width: 350px;
     flex-direction: row;
     justify-content: center;
+    margin-top: 10px;
     
     
   }
@@ -279,22 +277,15 @@
     margin-left: 5px;
     padding: 6px 12px;
     font-size: 7px;
-    width: 100px;
+    width: 150px;
     margin-top: 10px;
     text-align: center;
     vertical-align: middle;
     border-radius: 4px;
     color: #fff;
-    background-color: #c4bcbc;
+    background-color: #f2bed5;
   }
-  
-  .delete-your-review-button:hover,
-  .delete-your-review-button:focus,
-  .delete-your-review-button:active {
-    color: #fff;
-    background-color: #ac9595;
-    border-color: #a38d8c;
-  }
+
   
   button.create-review-button{
     list-style: none;
@@ -307,3 +298,4 @@
   display: flex;
 
   }
+ 

@@ -73,16 +73,19 @@
     cursor: pointer;
     font-weight: 600;
     position: sticky;
+    text-decoration: none;
   }
   
   .profile-dropdown button:hover {
     position: relative;
     background-color: #e1a3de;
     overflow: hidden;
+    text-decoration: none;
   }
   
  .button-logout{
 width: 50px;
 border-radius: 5px;
 margin: 10px;
+text-decoration: none;
  }

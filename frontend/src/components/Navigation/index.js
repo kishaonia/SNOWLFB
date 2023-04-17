@@ -36,7 +36,7 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul className="navbar">
+    <div className="navbar">
       <div className="left-nav-bar">
         <a href="/">
           <img src={logoproj} height="100px" width="300px" alt="Logo" />
@@ -53,7 +53,7 @@ function Navigation({ isLoaded }) {
           <ProfileButton user={sessionUser} />
         </button>
       </div>
-    </ul>
+    </div>
   );
 }
 
