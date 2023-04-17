@@ -164,7 +164,7 @@ return (
     <div className="whereisyourplacelocated">Where's your place located?</div>
     <h4>Guests will only get your exact address once they booked a reservation</h4>
     <label className="create-spot-label">Country</label>
-    {Object?.keys(error).length ? <h5>{error?.country && <span className="error">{error?.country}</span>}</h5> : <h7></h7>}
+            {error?.country && <span className="error">{error?.country}</span>}
     <input
     type="text"
     placeHolder="Country"
@@ -173,7 +173,7 @@ return (
     onChange={e => setCountry(e.target.value)}
     />     
         <label className="create-spot-label">Street Address</label>
-    {Object?.keys(error).length ? <h5>{error?.address && <span className="error">{error?.address}</span>}</h5>:<h7></h7> }
+            {error?.address && <span className="error">{error?.address}</span>}
         <input
             type="text"
             value= {address}
@@ -182,7 +182,7 @@ return (
         />
         <label className="create-spot-label">City</label>
       
-        {Object?.keys(error).length ? <h5>{error?.city && <span className="error">{error?.city}</span>}</h5> : <h7></h7>}
+            {error?.city && <span className="error">{error?.city}</span>}
         <input
         type="text"
         value={city}
@@ -231,7 +231,7 @@ return (
         onChange={e => setPreviewImage(e.target.value)}
         />
          <label className="create-spot-label">Image URL 
-         (Upload in jpeg format only.)</label>
+         (Upload in jpeg, jpg, or png format only.)</label>
        {error?.image2 && <span className="error">{error?.image2}</span>}
         <input
             type="text"
