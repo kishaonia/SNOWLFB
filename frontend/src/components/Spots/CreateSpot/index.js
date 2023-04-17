@@ -162,7 +162,9 @@ export default function CreateSpot() {
                 <div className="createanewspot"> Create a new Spot</div>
                 {/* <br></br> */}
                 <div className="whereisyourplacelocated">Where's your place located?</div>
-                <h4>Guests will only get your exact address once they booked a reservation</h4>
+                <br></br>
+                <div className="guestwillonly">Guests will only get your exact address once they booked a reservation</div>
+                <br></br>
                 <label className="create-spot-label">Country</label>
                 {error?.country && <span className="error">{error?.country}</span>}
                 <input
@@ -170,7 +172,7 @@ export default function CreateSpot() {
                     placeHolder="Country"
                     value={country}
 
-                    onChange={e => setCountry(e.target.value)}
+                    onChange={e => setCountry(e?.target?.value)}
                 />
                 <label className="create-spot-label">Street Address</label>
                 {error?.address && <span className="error">{error?.address}</span>}
@@ -178,7 +180,7 @@ export default function CreateSpot() {
                     type="text"
                     value={address}
                     placeHolder="Address"
-                    onChange={e => setAddress(e.target.value)}
+                    onChange={e => setAddress(e?.target?.value)}
                 />
                 <label className="create-spot-label">City</label>
 
@@ -187,7 +189,7 @@ export default function CreateSpot() {
                     type="text"
                     value={city}
                     placeHolder="City"
-                    onChange={e => setCity(e.target.value)}
+                    onChange={e => setCity(e?.target?.value)}
                 />
                 <label className="create-spot-label">State</label>
                 {error?.state && <span className="error">{error?.state}</span>}
@@ -197,32 +199,37 @@ export default function CreateSpot() {
                     placeHolder="State"
                     onChange={e => setState(e.target.value)}
                 />
+                
                 <label className="create-spot-label">Description</label>
+                <div className="description-caption">Mention the best features of your space, any special amentities<br></br> like
+                      fast wif or parking, and what you love about the neighborhood.</div>
                 {error?.description && <span className="error">{error?.description}</span>}
-                <input
+                <textarea className="description-text-box"
                     type="text"
                     value={description}
-                    placeholder="Mention the best features of your space, any special amentities like
-        fast wif or parking, and what you love about the neighborhood."
+                    placeholder="Please write at least 30 characters"
                     onChange={e => setDescription(e.target.value)}
                 />
-                <label className="create-spot-label">Name of your spot</label>
+                <label className="create-spot-label">Create a title for your spot</label>
+                <div className="description-caption">Catch guests' attention with a spot title that highlights what makes your place special.</div>
                 {error?.name && <span className="error">{error?.name}</span>}
                 <input
                     type="text"
                     value={name}
-                    placeholder="Catch guests attention with a spot title that highlights what makes your place special."
+                    placeholder="Name of your spot"
                     onChange={e => setName(e.target.value)}
                 />
-                <label className="create-spot-label">Price</label>
+                <label className="create-spot-label">Set a base price for your spot</label>
+                <div className="description-caption">Competitive pricing can help your listing stand out and rank higher in search results.</div>
                 {error?.price && <span className="error">{error?.price}</span>}
                 <input
                     type="text"
                     value={price}
-                    placeholder="Competitive pricing can help your listing stand out and rank higher in search results"
+                    placeholder="$ Price per night (USD)"
                     onChange={e => setPrice(e.target.value)}
                 />
-                <label className="create-spot-label">Preview Image URL</label>
+                <label className="create-spot-label">Liven up your spot with photos</label>
+                <div className="description-caption">Submit a link to at least one photo to publish your spot.</div>
                 {error?.previewImage && <span className="error">{error?.previewImage}</span>}
                 <input
                     type="text"
@@ -231,7 +238,9 @@ export default function CreateSpot() {
                     onChange={e => setPreviewImage(e.target.value)}
                 />
                 <label className="create-spot-label">Image URL
-                    (Upload in jpeg, jpg, or png format only.)</label>
+                    </label>
+                    <div className="description-caption">Upload in jpeg, jpg, or png format only.</div>
+                    
                 {error?.image2 && <span className="error">{error?.image2}</span>}
                 <input
                     type="text"

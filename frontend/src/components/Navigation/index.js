@@ -45,7 +45,7 @@ function Navigation({ isLoaded }) {
       <div className="right-nav-bar">
         {sessionUser && (
           <NavLink className="create-spot-link" exact to="/spots/new">
-            Create a Spot
+            create a new spot
           </NavLink>
         )}
 

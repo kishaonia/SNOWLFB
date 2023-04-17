@@ -43,13 +43,13 @@ function ProfileButton({ user }) {
 
   const demoSignIn = (e) => {
     e.preventDefault();
-    const password = "password5";
-    const credential = "demouser@gmail.com";
+    const password = "password5"
+    const credential = "demouser@gmail.com"
     dispatch(sessionActions.login({ credential, password }));
     closeMenu();
-  };
+  }
 
-  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "");
+  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "" ) ;
 
   return (
     <>
@@ -61,17 +61,20 @@ function ProfileButton({ user }) {
         <ul className={ulClassName} ref={ulRef}>
           {user ? (
             <>
-              <li>Hello, {user.username}!</li>
-              <li>{user.email}</li>
-
-              <div className="dividing-line"> </div>
-              <NavLink exact to="/spots/current">
-                Manage Your Spots
-              </NavLink>
-
               <li>
-                <div className="dividing-line"> </div>
-
+                Hello, {user.firstName}!
+              </li>
+              <li>{user.email}</li>
+            
+              <div className='dividing-line'> </div>
+                <NavLink exact to="/spots/current">
+                  Manage Your Spots
+                </NavLink>
+              
+            
+              <li>
+              <div className='dividing-line'> </div>
+              <br></br>
                 <button className="button-logout" onClick={logout}>
                   Log Out
                 </button>
@@ -90,12 +93,8 @@ function ProfileButton({ user }) {
                 modalComponent={<SignupFormModal />}
               />
               {!user && (
-                <button
-                  onClick={demoSignIn}
-                  type="submit"
-                  id="demo-user-button"
-                >
-                  Demo User
+                <button onClick={demoSignIn} type="submit" id='demo-user-button'>
+                  Log in as Demo User
                 </button>
               )}
             </>

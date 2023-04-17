@@ -25,7 +25,7 @@ const OneSpotDetails = () => {
   useEffect(() => {
     dispatch(getOneSpotThunk(spotId));
     dispatch(getSpotsReviewsThunk(spotId));
-  }, [dispatch, JSON?.stringify(spotId)]);
+  }, [dispatch, JSON?.stringify(spotId), JSON?.stringify(reviewOwner)]);
 
   if (!spotDetailsValues) {
     return null;
@@ -64,26 +64,35 @@ const OneSpotDetails = () => {
 
       <div className="dividing-line"> </div>
       <div className="pop-up-reservation">
-        
-          {reviews?.length === 0 ? (
-            <div className="pricefornight">
+        {reviews?.length === 0 ? (
+          <div className="pricefornight">
+            {" "}
+            <span>
               {" "}
-              <span> ${spotDetailsValues?.price} per night</span> {starIcon} New
-            </div>
-          ) : reviews?.length === 1 ? (
-            <div> 
-              <span> ${spotDetailsValues?.price} per night </span> {starIcon}{" "}
-              {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
-              {spotDetailsValues?.numReviews} Review
-            </div>
-          ) : (
-            <div className="review-and-stars">
-              <span> ${spotDetailsValues?.price} per night</span> &#9733;{" "}
-              {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
-              {spotDetailsValues?.numReviews} Reviews{" "}
-            </div>
-          )}
-          {/* ${spotDetailsValues?.price}{" "}
+              ${Number(spotDetailsValues?.price)?.toFixed(2)} per night
+            </span>{" "}
+            {starIcon} New
+          </div>
+        ) : reviews?.length === 1 ? (
+          <div>
+            <span>
+              {" "}
+              ${Number(spotDetailsValues?.price)?.toFixed(2)} per night{" "}
+            </span>{" "}
+            {starIcon} {Number(spotDetailsValues?.avgStarRating)?.toFixed(1)} ·{" "}
+            {spotDetailsValues?.numReviews} Review
+          </div>
+        ) : (
+          <div className="review-and-stars">
+            <span>
+              {" "}
+              ${Number(spotDetailsValues?.price)?.toFixed(2)} per night
+            </span>{" "}
+            &#9733; {Number(spotDetailsValues?.avgStarRating)?.toFixed(1)} ·{" "}
+            {spotDetailsValues?.numReviews} Reviews{" "}
+          </div>
+        )}
+        {/* ${spotDetailsValues?.price}{" "}
           {reviews?.length === 0 ? "per night" : "/night"}
           <div className="reviews-and-star">
             &#9733;
@@ -93,14 +102,14 @@ const OneSpotDetails = () => {
               : ` ${spotDetailsValues?.avgRating} ${starIcon} · ${
                   spotDetailsValues?.numReviews
                 } ${reviews?.length === 1 ? "Review" : "Reviews"}`} */}
-          {/* </div> */}
-        
+        {/* </div> */}
+
         <button
           type="reserve-button"
-          onClick={() => alert("This feature is coming")}
+          onClick={() => alert("Feature coming soon!")}
           className="reserve-button"
         >
-          Register
+          Reserve
         </button>
       </div>
 
@@ -171,8 +180,13 @@ const OneSpotDetails = () => {
                   </ul>
                 </div>
               ))
-          ) : user?.id && reviews?.length === 0 && user?.id !== spotDetailsValues?.Owner?.id ?
-        <p>Be the first to post a review!</p> : <></>}
+          ) : user?.id &&
+            reviews?.length === 0 &&
+            user?.id !== spotDetailsValues?.Owner?.id ? (
+            <p>Be the first to post a review!</p>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

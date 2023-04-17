@@ -52,7 +52,7 @@ export default function CreateReview({spotId}) {
 
   return (
       <div className="create-review-form-div">
-          <h1 className="title-review"> Leave a Review</h1>
+          <h1 className="title-review"> How was your stay? </h1>
           <ul className="errors-create">
               {Object.values(error).map((errorMsg, idx) =>(
                   <li key={idx}>{errorMsg}</li>
@@ -65,6 +65,7 @@ export default function CreateReview({spotId}) {
                       <input 
                       id="review-create"
                       type="text-create"
+                      placeholder="Leave your review here"
                       value={review}
                       onChange={(e) => setReview(e.target.value)}
                       required
@@ -76,7 +77,7 @@ export default function CreateReview({spotId}) {
                   <div className="entries-review star-rating">
                       {starIcons}
                   </div>
-                  <button type="submit" onSubmit={handleSubmit} className="submit-button" id="leave-review-button">Leave Review</button>
+                  <button type="submit" onSubmit={handleSubmit} className="submit-button" id="leave-review-button">Submit Your Review</button>
               </form>
           </ul>
       </div>
