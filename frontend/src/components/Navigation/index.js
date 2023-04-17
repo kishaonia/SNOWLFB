@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
-import OpenModalMenuItem from './OpenModalMenuItem';
-import LoginFormModal from '../LoginFormModal';
-import SignupFormModal from '../SignupFormModal';
-import './Navigation.css';
-import { login } from '../../store/session';
-import logoproj from '../../assets/logoproj.jpg';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ProfileButton from "./ProfileButton";
+import OpenModalMenuItem from "./OpenModalMenuItem";
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal";
+import "./Navigation.css";
+import { login } from "../../store/session";
+import logoproj from "../../assets/logoproj.jpg";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state?.session?.user);
@@ -36,8 +36,7 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-  
-   <ul className="navbar">
+    <ul className="navbar">
       <div className="left-nav-bar">
         <a href="/">
           <img src={logoproj} height="100px" width="300px" alt="Logo" />
@@ -49,15 +48,13 @@ function Navigation({ isLoaded }) {
             Create a Spot
           </NavLink>
         )}
-      
-        <button className='profile-button'>
-           <ProfileButton user={sessionUser} />
+
+        <button className="profile-button">
+          <ProfileButton user={sessionUser} />
         </button>
       </div>
     </ul>
-
-);
-
+  );
 }
 
 export default Navigation;

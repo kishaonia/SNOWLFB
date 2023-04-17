@@ -43,13 +43,13 @@ function ProfileButton({ user }) {
 
   const demoSignIn = (e) => {
     e.preventDefault();
-    const password = "password5"
-    const credential = "demouser@gmail.com"
+    const password = "password5";
+    const credential = "demouser@gmail.com";
     dispatch(sessionActions.login({ credential, password }));
     closeMenu();
-  }
+  };
 
-  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "" ) ;
+  const ulClassName = "profile-dropdown" + (showMenu ? " show" : "");
 
   return (
     <>
@@ -61,20 +61,17 @@ function ProfileButton({ user }) {
         <ul className={ulClassName} ref={ulRef}>
           {user ? (
             <>
-              <li>
-                Hello, {user.username}!
-              </li>
+              <li>Hello, {user.username}!</li>
               <li>{user.email}</li>
-            
-              <div className='dividing-line'> </div>
-                <NavLink exact to="/spots/current">
-                  Manage Your Spots
-                </NavLink>
-              
-            
+
+              <div className="dividing-line"> </div>
+              <NavLink exact to="/spots/current">
+                Manage Your Spots
+              </NavLink>
+
               <li>
-              <div className='dividing-line'> </div>
-              
+                <div className="dividing-line"> </div>
+
                 <button className="button-logout" onClick={logout}>
                   Log Out
                 </button>
@@ -93,7 +90,11 @@ function ProfileButton({ user }) {
                 modalComponent={<SignupFormModal />}
               />
               {!user && (
-                <button onClick={demoSignIn} type="submit" id='demo-user-button'>
+                <button
+                  onClick={demoSignIn}
+                  type="submit"
+                  id="demo-user-button"
+                >
                   Demo User
                 </button>
               )}
