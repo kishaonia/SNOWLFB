@@ -230,6 +230,8 @@
     
     
   }
+
+ 
   
   .reserve-button {
   
@@ -294,4 +296,14 @@
     border-color: #a38d8c;
   }
   
-  
+  button.create-review-button{
+    list-style: none;
+    background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #444;
+  font-size: 14px;
+  padding: 8px 12px;
+  display: flex;
+
+  }

@@ -65,7 +65,25 @@ const OneSpotDetails = () => {
       <div className="dividing-line"> </div>
       <div className="pop-up-reservation">
         <div className="howmuch">
-          ${spotDetailsValues?.price}{" "}
+          {reviews?.length === 0 ? (
+            <div>
+              {" "}
+              <span> ${spotDetailsValues?.price} per night</span> {starIcon} New
+            </div>
+          ) : reviews?.length === 1 ? (
+            <div>
+              <span> ${spotDetailsValues?.price} per night </span> {starIcon}{" "}
+              {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
+              {spotDetailsValues?.numReviews} Review
+            </div>
+          ) : (
+            <div>
+              <span> ${spotDetailsValues?.price} per night</span> &#9733;{" "}
+              {Number(spotDetailsValues?.avgStarRating).toFixed(1)} ·{" "}
+              {spotDetailsValues?.numReviews} Reviews{" "}
+            </div>
+          )}
+          {/* ${spotDetailsValues?.price}{" "}
           {reviews?.length === 0 ? "per night" : "/night"}
           <div className="reviews-and-star">
             &#9733;
@@ -74,8 +92,8 @@ const OneSpotDetails = () => {
               ? " New"
               : ` ${spotDetailsValues?.avgRating} ${starIcon} · ${
                   spotDetailsValues?.numReviews
-                } ${reviews?.length === 1 ? "Review" : "Reviews"}`}
-          </div>
+                } ${reviews?.length === 1 ? "Review" : "Reviews"}`} */}
+          {/* </div> */}
         </div>
         <button
           type="reserve-button"
@@ -153,9 +171,8 @@ const OneSpotDetails = () => {
                   </ul>
                 </div>
               ))
-          ) : (
-            <p>Be the first to review!</p>
-          )}
+          ) : user?.id && reviews?.length === 0 && user?.id !== spotDetailsValues?.Owner.id ?
+        <p>Be the first to post a review!</p> : <></>}
         </div>
       </div>
     </div>
