@@ -62,32 +62,32 @@ export default function CreateSpot() {
             if (
                 !(previewImage.endsWith(".jpg") || previewImage.endsWith(".png") || previewImage.endsWith(".jpeg"))
             )
-                error.previewImage = "The image url needs to end in .jpeg, .png, or jpeg"
+                error.previewImage = "The image url needs to end in .jpg, .png, or jpeg"
         }
 
         if (image2) {
             if (
                 !(image2.endsWith(".jpg") || image2.endsWith(".png") || image2.endsWith(".jpeg"))
             )
-                error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
+                error.image2 = "The image url needs to end in .jpg, .png, or jpeg"
         }
         if (image3) {
             if (
                 !(image3.endsWith(".jpg") || image3.endsWith(".png") || image3.endsWith(".jpeg"))
             )
-                error.image3 = "The image url needs to end in .jpeg, .png, or jpeg"
+                error.image3 = "The image url needs to end in .jpg, .png, or jpeg"
         }
         if (image4) {
             if (
                 !(image4.endsWith(".jpg") || image4.endsWith(".png") || image4.endsWith(".jpeg"))
             )
-                error.image2 = "The image url needs to end in .jpeg, .png, or jpeg"
+                error.image2 = "The image url needs to end in .jpg, .png, or jpeg"
         }
         if (image5) {
             if (
                 !(image5.endsWith(".jpg") || image5.endsWith(".png") || image5.endsWith(".jpeg"))
             )
-                error.image5 = "The image url needs to end in .jpeg, .png, or jpeg"
+                error.image5 = "The image url needs to end in .jpg, .png, or jpeg"
         }
         setError(error);
         // if (Object.keys(error).length > 0) {
