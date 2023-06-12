@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import DeleteOneSpot from "../DeleteOneSpot";
 import OpenModalMenuItem from "../../Navigation/OpenModalMenuItem";
+import "../SpotsHomePage/SpotsHomePage.css"
 
 import "./CurrentUserSpots.css";
 
@@ -21,7 +22,7 @@ const CurrentUserSpots = () => {
   }
   return (
     <>
-      <div className="manage-your-spots-create">
+      <div className="all-spots-homepage">
         <div className="createspot-manage">Manage Your Spot</div>
 
         {sessionUser && (
@@ -29,18 +30,21 @@ const CurrentUserSpots = () => {
             Create a Spot
           </NavLink>
         )}
-    <div className="current-container">
+    <div className="spotValues">
       {allSpotsValues?.map((spotValues) => {
         return (
-          <nav key={spotValues?.id} className="current-Spots">
+          <>
+          <nav key={spotValues?.id} className="navContainer">
             <NavLink
-              className="edit-navContainer"
+              className="navContainer"
               to={`/spots/${spotValues?.id}`}
             >
-              <div className="edit-navImage">
+              
+              <div className="navImageHome">
                 <img src={spotValues?.previewImage} alt="Preview-Image" />
+                
               </div>
-
+              <div className="navSpotDetails">
               <div className="city-rating">
                 <span>
                   {spotValues?.city}, {spotValues?.state}
@@ -52,9 +56,10 @@ const CurrentUserSpots = () => {
                     ? Number(spotValues?.avgRating).toFixed(1)
                     : "New"}
                 </span>
-              </div>
+                </div>
+                </div>
               <div>$ {spotValues?.price?.toFixed(2)}/ night</div>
-            </NavLink>
+           </NavLink>
             <div className="update-delete-button">
               <div>
                 <button className="update-spot-button">
@@ -71,6 +76,7 @@ const CurrentUserSpots = () => {
               </div>
             </div>
           </nav>
+          </>
         );
         
       }
