@@ -1,154 +1,167 @@
 .edit-all-spots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px;
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 40px;
-}
-
-
-  .error {
-    color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  
+  .current-Spots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease-in-out;
+    width: 367px;
+    height: 427px;
+    padding: 20px;
   }
 
-.current-Spots:hover {
-  transform: translateY(-5px);
-}
+    .error {
+      color: red;
+    }
+  
+  .current-Spots:hover {
+    transform: translateY(-5px);
+  }
+  
+  .edit-navContainer {
+    display: flex;
+    /* align-items: center; */
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  /* .edit-navImage {
+    width: 350px;
+    height: 205px;
+    margin-right: 1rem;
+    border-radius: 16px;
+    overflow: auto;
+  } */
+  
+  .edit-navImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .edit-navSpotDetails {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    padding: 16px;
+  }
+  
+  .edit-navSpotDetails div:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  
+  .avgRating {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  /* .avgRating::before {
+    content: "Rating: ";
+    margin-right: 0.5rem;
+  } */
+  
+  .update-delete-button {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 1000px;
+  }
+  
+  .update-delete-button button {
+    text-decoration: none;
+    background-color: #bda0df;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+    margin: 3px;
+    list-style: none;
+  }
+  
+  .update-delete-button button:hover {
+    text-decoration: none;
+    background-color: #e382c6df;
+  }
+  
+  div.createanewspot {
+    font-size: 23px;
+    text-align: center;
+    padding-bottom: 5px;
 
-.edit-navContainer {
-  display: flex;
-  /* align-items: center; */
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-  flex-direction: column;
-}
+  }
+  
+  div.whereisyourplacelocated {
 
-/* .edit-navImage {
-  width: 350px;
-  height: 205px;
-  margin-right: 1rem;
-  border-radius: 16px;
-  overflow: auto;
-} */
+    font-style: normal;
+    text-align: center;
+  }
+  
+  input[type="text"],
+  select {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 465px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    padding: 12px 20px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 25px;
+  }
+  
 
-.edit-navImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  
+  .create-spot-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+  }
+  
+  .button-create-spot {
+    width: 150px;
+   position: relative;
+    height: 50px;
+    background-color: #bda0df;
+    color: white;
 
-.edit-navSpotDetails {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  padding: 16px;
-}
+  }
+  
 
-.edit-navSpotDetails div:not(:last-child) {
-  margin-bottom: 0.5rem;
-}
-
-.avgRating {
-  display: flex;
-  align-items: center;
-  color: #000000;
-  font-weight: bold;
-}
-
-/* .avgRating::before {
-  content: "Rating: ";
-  margin-right: 0.5rem;
-} */
-
-.update-delete-button {
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-
-}
-
-.update-delete-button button {
-  text-decoration: none;
-  background-color: #bda0df;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  margin: 3px;
-  list-style: none;
-}
-
-.update-delete-button button:hover {
-  text-decoration: none;
-  background-color: #e382c6df;
-}
-
-div.createanewspot {
-  font-size: 23px;
-  text-align: center;
-  padding-bottom: 5px;
-
-}
-
-div.whereisyourplacelocated {
-
-  font-style: normal;
-  text-align: center;
-}
-
-input[type="text"],
-select {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 465px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  margin: 8px 0;
-  padding: 12px 20px;
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-
-
-.create-spot-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 120px;
-  padding-bottom: 100px;
-}
-
-.button-create-spot {
-  width: 150px;
- position: relative;
-  height: 50px;
-  background-color: #bda0df;
-  color: white;
-
-}
-
-
-.edit-spot-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 150px;
-  padding-bottom: 100px;
-}
-.update-spot-button a {
-  text-decoration: none;
-  color: white;
-}
-.please-container-manage{
-  display: flex;
-}
+  .edit-spot-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+  .update-spot-button a {
+    text-decoration: none;
+    color: white;
+  }
+  .please-container-manage{
+    display: flex;
+  }
