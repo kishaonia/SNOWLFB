@@ -6,11 +6,12 @@ h1.signup-h1 {
 form.signup-form{
     display: flex;
     width: 500px;
-    height: 400px;
     flex-direction: column;
     align-content: space-around;
     align-items: center;
     justify-content: space-evenly;
+    height: 70vh;
+
 
 }
 

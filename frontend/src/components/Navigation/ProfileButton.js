@@ -43,7 +43,7 @@ function ProfileButton({ user }) {
 
   const demoSignIn = (e) => {
     e.preventDefault();
-    const password = "password"
+    const password = "password5"
     const credential = "demouser@gmail.com"
     dispatch(sessionActions?.login({ credential, password }));
     closeMenu();

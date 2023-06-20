@@ -23,6 +23,62 @@ const validateLogin = [
 
 
 // Log in
+// router.post(
+//     '/',
+//     validateLogin,
+//     async (req, res, next) => {
+//         const { credential, password } = req.body;
+
+//         const user = await User.login({ credential, password });
+
+//         if (!user) {
+//             const err = new Error('Login failed');
+//             err.status = 401;
+//             err.title = 'Login failed';
+//             err.errors = ['The provided credentials were invalid.'];
+//             return next(err);
+//         }
+
+//         // let token = await setTokenCookie(res, user);
+// await setTokenCookie(res, user)
+//         return res.json({
+//             user: user
+//             // 'user': {
+//             //     // user
+//             //     id: user.id,
+//             //     firstName: user.firstName,
+//             //     lastName: user.lastName,
+//             //     email: user.email,
+//             //     username: user.username,
+//             //     // token: token,
+//             // }
+//         })
+//     }
+// );
+
+// //Log out
+// router.delete(
+//     '/',
+//     (_req, res) => {
+//         res.clearCookie('token');
+//         return res.json({ message: 'success' });
+//     }
+// );
+
+// // Restrore session user
+// router.get(
+//     '/',
+//     restoreUser,
+//     (req, res) => {
+//         const { user } = req;
+//         if (user) {
+//             return res.json({
+//                 user: user
+//             });
+//         } else return res.json({ user: null });
+//     }
+// );
+
 router.post(
     '/',
     validateLogin,
@@ -32,31 +88,21 @@ router.post(
         const user = await User.login({ credential, password });
 
         if (!user) {
-            const err = new Error('Login failed');
+            const err = new Error('Invalid credentials');
             err.status = 401;
             err.title = 'Login failed';
-            err.errors = ['The provided credentials were invalid.'];
+            err.errors = ['Invalid credentials'];
             return next(err);
         }
 
-        // let token = await setTokenCookie(res, user);
-await setTokenCookie(res, user)
+
+        await setTokenCookie(res, user);
+
         return res.json({
             user: user
-            // 'user': {
-            //     // user
-            //     id: user.id,
-            //     firstName: user.firstName,
-            //     lastName: user.lastName,
-            //     email: user.email,
-            //     username: user.username,
-            //     // token: token,
-            // }
-        })
+        });
     }
 );
-
-//Log out
 router.delete(
     '/',
     (_req, res) => {
@@ -65,15 +111,21 @@ router.delete(
     }
 );
 
-// Restrore session user
+// Restore session user
 router.get(
     '/',
-    restoreUser,
     (req, res) => {
         const { user } = req;
         if (user) {
+            const safeUser = {
+                id: user.id,
+                email: user.email,
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName
+            };
             return res.json({
-                user: user
+                user: safeUser
             });
         } else return res.json({ user: null });
     }

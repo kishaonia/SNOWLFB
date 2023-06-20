@@ -51,14 +51,14 @@ function Navigation({ isLoaded }) {
             <input
               className="homepage-date-check-in"
               placeholder="Anywhere"
-              onfocus="(this.type = 'homepage-date-check-in')"
+              onFocus="(this.type = 'homepage-date-check-in')"
               type="date"
             ></input>
             <input
               className="homepage-date-check-out"
               placeholder="Any week"
               type="date"
-              onfocus="(this.type = 'homepage-date-check-in')">
+              onFocus="(this.type = 'homepage-date-check-in')">
             </input>
             <input
               className="guest-check-in"
