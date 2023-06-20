@@ -22,7 +22,7 @@ return (
     <div className="spot-delete-form-div">
     <div className="title-delete-form">Are you sure you want to delete this spot?</div>
     <ul className="errors">
-        {/* {errors.map((error, idx) => (
+        {/* {errors.map((error, idx) => ( 
             <li key={idx}>{error}</li>
         ))} */}
     </ul>

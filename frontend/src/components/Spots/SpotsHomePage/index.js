@@ -49,7 +49,7 @@ const SpotsHomePage = () => {
     <input type="checkbox" id="toggleButton" onClick={handleClick} />
     <span className="slider round"></span>
   </label>
-</div>
+</div> 
 
 <div className="home-page-body">
 
@@ -61,7 +61,7 @@ const SpotsHomePage = () => {
             className="navContainer"
             to={`/spots/${spotValues?.id}`}
           >
-            <div className="navImageHome">
+             <div className="navImageHome">
               <div className="data-tool-tip"><span>{spotValues?.name}</span></div>
               <img src={spotValues?.previewImage} alt="Preview-Image" />
             </div>

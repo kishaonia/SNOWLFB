@@ -149,7 +149,7 @@ const initialState = {
 
 //const initialState = {
    //spots={}
-   //spot={}
+   //spot={} 
 // }
 
 const spotsReducer = (state = initialState, action) => {

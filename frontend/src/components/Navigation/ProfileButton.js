@@ -58,7 +58,7 @@ function ProfileButton({ user }) {
         <i className="fa fa-user-circle-o"></i>
       </button>
       <div className="profile-menu">
-        <ul className={ulClassName} ref={ulRef}>
+        <ul className={ulClassName} ref={ulRef}> 
           {user ? (
             <>
               <li>

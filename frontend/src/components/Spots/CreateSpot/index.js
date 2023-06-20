@@ -94,13 +94,13 @@ export default function CreateSpot() {
         //     console.log(error)
         // }
         if (error.length > 0) {
-            return setError({})
+            return setError({}) 
 
         }
         const spot = {
             country: country,
             address: address,
-            city: city,
+            city: city, 
             state: state,
             description: description,
             price: price,

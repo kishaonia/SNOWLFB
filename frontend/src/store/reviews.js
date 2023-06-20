@@ -76,6 +76,6 @@ case POST_ONEREVIEW:
     return newReviewsState
 default: return state
 }
-}
+} 
 
 export default reviewsReducer

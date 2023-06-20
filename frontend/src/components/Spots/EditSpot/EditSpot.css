@@ -28,7 +28,7 @@
       color: red;
     }
   
-  .current-Spots:hover {
+  .current-Spots:hover { 
     transform: translateY(-5px);
   }
   

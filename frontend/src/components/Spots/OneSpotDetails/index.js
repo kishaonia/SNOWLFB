@@ -63,7 +63,7 @@ const OneSpotDetails = () => {
         readOnly
       >
         {spotDetailsValues?.description}
-      </div>
+      </div> 
       <br></br>
 
       <div className="dividing-line"> </div>
