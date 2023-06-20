@@ -47,7 +47,7 @@ function Navigation({ isLoaded }) {
         <div className="middle-navbar">
 
 
-          <div className="homepage-input">
+          {/* <div className="homepage-input">
             <input
               className="homepage-date-check-in"
               placeholder="Anywhere"
@@ -65,7 +65,7 @@ function Navigation({ isLoaded }) {
               placeholder="Add Guests"
               type="number">
             </input>
-          </div>
+          </div> */}
           <ul >
             <div className="homepage-input-popup">
               <li>Stay</li>

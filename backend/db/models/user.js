@@ -16,9 +16,14 @@ module.exports = (sequelize, DataTypes) => {
       return { id, username, email };
     };
 
+    // validatePassword(password) {
+    //   return bcrypt.compareSync(password, this.password.toString());
+    // };
+
     validatePassword(password) {
-      return bcrypt.compareSync(password, this.hashedPassword.toString());
+      return password === this.password.toString();
     };
+    
 
     static getCurrentUserById(id) {
       return User.scope("currentUser").findByPk(id);
@@ -40,11 +45,11 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async signup({ username, email, password, firstName, lastName }) {
-      const hashedPassword = bcrypt.hashSync(password);
+      // const password = password;
       const user = await User.create({
         username,
         email,
-        hashedPassword,
+        password,
         firstName,
         lastName
       });
@@ -98,8 +103,8 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: true
       }
     },
-    hashedPassword: {
-      type: DataTypes.STRING.BINARY,
+    password: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [60, 60]
@@ -118,12 +123,12 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     defaultScope: {
       attributes: {
-        exclude: ["hashedPassword", "email", "createdAt", "updatedAt"]
+        exclude: ["password", "email", "createdAt", "updatedAt"]
       }
     },
     scopes: {
       currentUser: {
-        attributes: { exclude: ["hashedPassword", "createdAt", "updatedAt"] }
+        attributes: { exclude: ["password", "createdAt", "updatedAt"] }
       },
       loginUser: {
         attributes: {},

@@ -102,16 +102,16 @@ function SignupFormModal() {
           />
         </label>
         <button
-          disabled={
-            password.length < 6 ||
-            username.length < 4 ||
-            password !== confirmPassword ||
-            !lastName ||
-            !firstName ||
-            !email
-              ? true
-              : false
-          }
+          // disabled={
+          //   password.length < 6 ||
+          //   username.length < 4 ||
+          //   password !== confirmPassword ||
+          //   !lastName ||
+          //   !firstName ||
+          //   !email
+          //     ? true
+          //     : false
+          // }
           type="submit"
           className="button-submit"
         >
