@@ -1,5 +1,14 @@
 .all-spots {
   display: flex;
+<<<<<<< HEAD
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  margin-top: 100px;
+  padding: 80px;
+  
+  
+=======
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
@@ -31,6 +40,7 @@
     white-space: nowrap;
     color: black;
     text-decoration: none;
+>>>>>>> parent of a649d78 (omg huhu)
 }
 
 
