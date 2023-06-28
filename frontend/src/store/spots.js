@@ -40,10 +40,8 @@ export const editSpotAction = (spot) => ({
 
 export const getAllSpotsThunk = () => async dispatch => {
     const res = await fetch('/api/spots')
-    console.log('Res', res)
     if (res.ok) {
         const spots = await res.json()
-        console.log('getSpots', spots)
         dispatch(getAllSpotsAction(spots))
     }
 };
@@ -116,7 +114,6 @@ export const createOneSpotThunk = (spot, images) => async dispatch => {
        
 
     })
-    console.log('Response Create Spot', res)
     const spotCreated = await res.json()
     spotCreated['SpotImages'] = []
     if (res.ok) {
@@ -129,7 +126,6 @@ export const createOneSpotThunk = (spot, images) => async dispatch => {
             body: JSON.stringify(images[i])
         });
         const image = await res2.json()
-        console.log('images-array', image)
         if (res2.ok) {
             spotCreated.SpotImages.push(image)
         }

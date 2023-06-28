@@ -11,7 +11,6 @@ const SpotsHomePage = () => {
   const allSpots = useSelector((state) => state?.spots);
   const allSpotsValues = Object?.values(allSpots);
   const starIcon = "\u2605";
-  console.log("All Spots", allSpotsValues);
   const [showPrice, setShowPrice] = useState(false);
 
   const handleClick = () => {
@@ -54,7 +53,6 @@ const SpotsHomePage = () => {
 <div className="home-page-body">
 
       {allSpotsValues?.map((spotValues) => {
-        console.log("spotValues", spotValues);
         return (
           <NavLink
             key= { spotValues?.id}

@@ -15,17 +15,16 @@ export default function CreateReview({spotId}) {
   const handleSubmit = async(e) => {
       e.preventDefault();
       const error = {}
-      if (!review || review?.length < 10) {
-          error.reviewWords = "A review consisting of at least 10 characters is required."
+      if (!review || review?.length < 5) {
+          error.reviewWords = "A review consisting of at least 5 characters is required."
       }
 
-      if (stars > 5 || stars > 5) {
+      if (stars > 5 || stars < 1) {
        error.reviewStars = "Please choose a rating from 1 to 5"
       }
       setError(error)
 
       if (Object?.keys(error).length > 0) {
-          console.log(error)
       }
 
       const reviewCreated = {
@@ -54,7 +53,7 @@ export default function CreateReview({spotId}) {
       <div className="create-review-form-div">
           <h1 className="title-review"> How was your stay? </h1>
           <ul className="errors-create">
-              {Object.values(error).map((errorMsg, idx) =>(
+              {Object?.values(error)?.map((errorMsg, idx) =>(
                   <li key={idx}>{errorMsg}</li>
               ))}
               <form 
@@ -78,17 +77,21 @@ export default function CreateReview({spotId}) {
                       {starIcons}
                   </div>
                   <button 
-          disabled={
-           !review || review?.length < 10 || 
-stars > 5 || stars > 5
-              ? true
-              : false
-          }
+                  disabled={
+                  !review || review?.length < 5 || 
+                   stars > 5 || stars < 1
+                      ? true
+                      : false
+                  }
           type="submit"
           className="button-submit-review"
         >
+
+
           Submit Your Review
         </button>
+
+
               </form>
           </ul>
       </div>

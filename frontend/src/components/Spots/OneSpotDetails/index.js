@@ -14,10 +14,8 @@ const OneSpotDetails = () => {
   const { [spotId]: spotDetailsValues } = useSelector((state) => state?.spots);
   const allReviews = useSelector((state) => state?.reviews);
   const reviews = Object?.values(allReviews);
-  console.log("reviews", reviews);
   const user = useSelector((state) => state?.session?.user);
   const starIcon = "\u2605";
-  console.log("user", user);
 
   const reviewOwner = reviews?.find((review) => review?.User?.id === user?.id);
   

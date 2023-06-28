@@ -67,7 +67,7 @@
     display: block;
     width: 100%;
     padding: 0.5rem;
-    background-color: #e099ce;
+    background-color: #bfbcbe;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -78,7 +78,7 @@
   
   .profile-dropdown button:hover {
     position: relative;
-    background-color: #e1a3de;
+    background-color: #625d62;
     overflow: hidden;
     text-decoration: none;
   }

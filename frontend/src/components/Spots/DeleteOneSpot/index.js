@@ -2,6 +2,7 @@ import {useModal} from "../../../context/Modal";
 import {deleteOneSpotThunk} from '../../../store/spots';
 import {useDispatch} from 'react-redux';
 // import OpenModalMenuItem from "../../Navigation/OpenModalMenuItem";
+import "./DeleteOneSpot.css"
 
 export default function DeleteOneSpot({spotId}) {
 const {closeModal} = useModal()

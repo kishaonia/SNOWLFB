@@ -32,7 +32,6 @@ export default function EditSpot() {
     const [lng, setLng] = useState("");
     // // const spot = useSelector(state => state.spots)
     // const spotDetails = spot[spotId]
-    console.log('Spot Details', spotDetails)
 
 useEffect(() => {
     dispatch(getOneSpotThunk(spotId))
@@ -111,7 +110,6 @@ useEffect(() => {
         // }
         setError(error);
         if (Object?.keys(error).length > 0) {
-            console.log(error)
         }
         // if (error.length > 0) {
         //     return setError({})

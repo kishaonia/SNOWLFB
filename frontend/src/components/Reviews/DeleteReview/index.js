@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 export default function DeleteOneReview({ reviewId }) {
     const { closeModal } = useModal()
     const dispatch = useDispatch()
-console.log('checking reviewId', reviewId)
     const onSubmit = async (e) => {
         e.preventDefault();
        await dispatch(deleteOneReviewThunk(reviewId))
