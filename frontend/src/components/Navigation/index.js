@@ -81,7 +81,7 @@ function Navigation({ isLoaded }) {
 
           {sessionUser && isLoaded && (
             <NavLink className="create-spot-link" exact to="/spots/new">
-              snowlfb your home
+              create a spot
             </NavLink>
           )}
 
