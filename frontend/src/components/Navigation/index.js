@@ -93,14 +93,19 @@ function Navigation({ isLoaded }) {
 
       </div>
       <div className="footer">
-        <div className="kishas-footer">
-          <p className="kishas-name">Kisha Onia</p>
-          <p className="links-right">
-            <a className="github" href="https://github.com/kishaonia">Github</a>
-            <a className="portfolio" href="https://kishaonia.github.io/KishaOnia/">Portfolio</a>
-            <a className="email" href="mailto:workwithkisha@gmail.com">Email</a>
-          </p>
-        </div>
+ 
+
+<div className="kishas-footer">
+  <p className="kishas-name">Kisha Onia</p>
+  <p className="links-right">
+    <a className="linkedin" href="https://www.linkedin.com/in/kisha-onia-63bb35182/" target="_blank">LinkedIn</a>
+    <a className="github" href="https://github.com/kishaonia" target="_blank">Github</a>
+    <a className="portfolio" href="https://kishaonia.github.io/KishaOnia/" target="_blank">Portfolio</a>
+    <a className="email" href="mailto:workwithkisha@gmail.com" target="_blank">Email</a>
+  </p>
+</div>
+
+
       </div>
     </div>
   );

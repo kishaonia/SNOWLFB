@@ -253,3 +253,12 @@ flex-wrap: wrap;
 justify-content: flex-start;
 padding: 50px
 }
+
+
+.no-spots-text{
+  display: flex;
+    height: 54vh;
+    width: 169vh;
+    justify-content: center;
+    align-items: center;
+}
